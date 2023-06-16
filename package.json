@@ -1,0 +1,15 @@
+{
+  "name": "veganit",
+  "version": "1.0.0",
+  "description": "## **Este sitio web te ayudará a encontrar la mejor comida vegana de todo el mercado, al mejor precio y en el menor tiempo posible.**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
