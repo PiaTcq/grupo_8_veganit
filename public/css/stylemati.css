@@ -1,0 +1,145 @@
+.pagina{
+    background-color: pink;
+}
+
+.header{
+    background-color: black;
+    color:white;
+}
+.main{
+  font-size: 25px;  
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.footer{
+    display: flex;
+} 
+
+
+.cabeza{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.caja{
+    margin-top: 15px;
+    background-color: white;
+     width: 60%;
+    background-color: white;
+    border: solid 5px black;
+   box-sizing: content-box;
+   display: flex;
+   flex-direction: column; 
+    
+}
+
+.boton{
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+}
+.boton:hover{
+    background-color: red;
+}
+
+.boton2{
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+}
+.boton2:hover{
+    background-color: red;
+}
+
+.chikito{
+    font-size: 17px;
+}
+
+.seccion{
+    font-size: 25px;
+   /* width: 150px;
+    height: 50px;*/
+    display: flex;
+    justify-content: space-around;
+}
+/*.seccioncita{
+    display:flex;*/
+    /*flex-direction: column;*/
+   /* justify-content: flex-end;
+    width: 60%;
+}*/
+
+/*.seccionuno{
+    display: flex;
+}
+.secciondos{
+    display: flex;
+}*/
+.secciontres{
+    display:flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+.seccioncuatro{
+    display:flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+/*.ejemplo{
+    border: solid 5px black;
+    margin-left: 120px;
+    margin-right: 120px;
+}*/
+
+
+
+@media (max-width:360px )/*celulares chiquitos*/{
+    body{
+          .caja{
+            flex-wrap: wrap;
+            width: 100% !important;
+            align-items: center;
+          .seccion{
+            flex-wrap: wrap;
+            width: 100% !important;
+            align-items: center;
+          }
+    }
+    }
+}
+
+@media (max-width:880px )/*tablets*/{
+    body{
+          .caja{
+            flex-wrap: wrap;
+            width: 75%;
+            align-items: center;
+          .seccion{
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+          }
+          .footer{
+            height: 25px;
+          }
+    }
+    }
+}
+/*@media (min-width:881px )/*compus{
+    body{
+          .caja{
+            flex-wrap: wrap;
+            width: 75%;
+            align-items: center;
+          .seccion{
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+          }
+    }
+    }
+}*/
