@@ -1,0 +1,42 @@
+main{
+    background-color: rgba(247,191,178,0.1);
+}
+.tituloPrincipal{
+    font-weight: 500;
+    opacity: 0.9;
+    padding: 25px 0 30px 30px;
+}
+.plato-caja{
+    padding: 15px 15px 10px 25px;
+    border-radius: 3%;
+}
+.nombrePlato{
+    color:#dd3939;
+    font-weight: 600;
+    opacity: 0.9;
+    padding-bottom: 10px;
+}
+.producto{
+    display: flex;
+}
+.numeroPlato{
+    font-weight: 500;
+    opacity: 0.9;
+    display: none;
+}
+.precio{
+    padding-top: 10px;
+    
+    opacity: 0.8;
+    font-weight: 500;
+}
+.imagenPlato{
+    padding: 10px 0 10px 0;
+}
+.descripcion{
+    padding-top: 10px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+  
