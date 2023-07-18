@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href = "../css/stylemati.css" rel = "stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Veganit</title>
+    
+
+  </head>
+  <body>
+    <%- include("../partials/header")%>
+    <main>
+       <% cuentas.forEach(cuentas=>{ %>
+        <br>
+        <div class="lista"> 
+          <h1> <%= cuentas.nombre %> </h1>
+          <h1> <%= cuentas.contraseña %> </h1>
+          <h1> <%= cuentas.confirmar %> </h1>
+          <h1> <%= cuentas.email %> </h1>
+          <h1> <%= cuentas.pais %> </h1>
+          <h1> <%= cuentas.localidad %> </h1>
+          <h1> <%= cuentas.direccion %> </h1>
+          <h1> <%= cuentas.genero %> </h1>
+          <button class="deleteyedit"><a href="editar/<%= cuentas.id %>"> editar </a></button>
+          <form action="delete/<%= cuentas.id %>?_method=delete" method="post"> 
+           <button class="deleteyedit" type="submit"> Borrar </button>
+          </form>
+          </div> 
+            <br>
+     <%  }) %>
+    </main align="center">
+    <br>
+    <br>
+    <%- include("../partials/footer") %>
+    <script src="https://kit.fontawesome.com/fc3af5a98a.js" crossorigin="anonymous"></script>
+  </body>
+</html>

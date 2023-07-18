@@ -1,0 +1,45 @@
+[
+ {
+  "id": "2",
+  "nombre": " Oscar Jr ",
+  "contraseña": " brad pritt ",
+  "confirmar": " brad pritt ",
+  "email": "oscar@gmail.com",
+  "pais": " Brasil ",
+  "localidad": " Sao Paolo ",
+  "direccion": " Pato 2008 ",
+  "genero": "hombre"
+ },
+ {
+  "id": 3,
+  "nombre": "German",
+  "contraseña": "fifi",
+  "confirmar": "fifi",
+  "email": "holasoygerman@gmail.com",
+  "pais": "chile",
+  "localidad": "valparaiso",
+  "direccion": "chupaelperro",
+  "genero": "hombre"
+ },
+ {
+  "id": 1689705631809,
+  "nombre": "Dybala",
+  "contraseña": "juventus",
+  "confirmar": "juventus",
+  "email": "dybala@gmail.com",
+  "pais": "Italia",
+  "localidad": "Roma",
+  "direccion": "totti 89",
+  "genero": "hombre"
+ },
+ {
+  "id": 1689707915423,
+  "nombre": " Matias ",
+  "contraseña": " mapache ",
+  "confirmar": " mapache ",
+  "email": "hola@gmail.com",
+  "pais": " argentina",
+  "localidad": " resistencia ",
+  "direccion": " arroz 108 "
+ }
+]

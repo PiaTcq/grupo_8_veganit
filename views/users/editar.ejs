@@ -11,34 +11,34 @@
     <main class="main">
             <div class="caja" align="center"> 
                 <h1 class="ejemplo"> CREA TU CUENTA </h1>
-            <form action="/users/register" method="post"> 
+                <form action="/users/editar/<%= cuentita.id.toString() %>?_method=PUT" method="post"> 
         <div class="seccion"> 
             <div class="seccionuno"> 
-                <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..." value=" <%= cuentita.nombre %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
-                <input type="password" name="contraseña" id="contraseña" placeholder="contraseña..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="password" name="contraseña" id="contraseña" placeholder="contraseña..." value=" <%= cuentita.contraseña %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br> 
-                <input type="password" name="confirmar" id="confirmar" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
+                <input type="password" name="confirmar" id="confirmar" placeholder="confirme la contraseña..." value=" <%= cuentita.confirmar %> " style="width: 230px; height: 35px; font-size:21px;">
                 <br>
                 <br>
-                <input type="email" name="email" id="email" placeholder="e-mail..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="email" name="email" id="email" placeholder="e-mail..." value=" <%= cuentita.email %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br> 
             </div>
           
             <div class="secciondos"> 
-                <input type="text" name="pais" id="pais" placeholder="país..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="text" name="pais" id="pais" placeholder="país..." value=" <%= cuentita.pais %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
-                <input type="text" name="localidad" id="localidad" placeholder="localidad..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="text" name="localidad" id="localidad" placeholder="localidad..." value=" <%= cuentita.localidad %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
-                <input type="text" name="direccion" id="direccion" placeholder="dirección..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="text" name="direccion" id="direccion" placeholder="dirección..." value=" <%= cuentita.direccion %> " style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
                 <select name="genero" style="width: 230px; height: 35px; font-size:20px;">
-                    <option value="" disabled selected hidden>genero...</option>
+                    <option value= "<%= cuentita.genero %>" disabled selected hidden><%= cuentita.genero %></option>
                     <option  value="hombre"> hombre </option>
                     <option value="mujer"> mujer </option>
                     <option value="no"> prefiero no contestar</option>
