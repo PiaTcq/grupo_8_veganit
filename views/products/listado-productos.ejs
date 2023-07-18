@@ -24,10 +24,10 @@
                             <a class="ancor" href="/products/detalle-producto/<%= productos[i].id %>">
                             <h4 class="nombrePlato"><%= productos[i].nombre %></h4>
                             <h6 class="numeroPlato">Plato N.º:<%= productos[i].id %></h6>
-                            <a class="imagenPlato" href=""><img width="150" height="150px" src="/imagenes/<%= productos[i].imagen %>"></a>
+                            <a class="imagenPlato" href="/products/detalle-producto/<%= productos[i].id %>"><img width="150" height="150px" src="/imagenes/<%= productos[i].imagen %>"></a>
                             <p class="precio">$<%= productos[i].precio %></p>
                             <p class="descripcion"><%= productos[i].descripcion %></p>
-                            </a>
+                            <a class="ancor" href="/products/detalle-producto/<%= productos[i].id %>"><p class="detalle">Ver detalle</p></a>
                         </div>
                     </div>
                     <% } %>

@@ -16,13 +16,13 @@ const controlador = {
         let datosCreacion = req.body;
         console.log(datosCreacion);
         let idnuevoProducto = (productos[productos.length-1].id)+1;
-
+        let nombreImagen = req.file.filename;
         let objNuevoProducto = {
             id: idnuevoProducto,
             nombre: datosCreacion.nombre,
             precio: parseInt(datosCreacion.precio),
             descripcion: datosCreacion.descripcion,
-            imagen:"veggie-burguer.webp"
+            imagen: nombreImagen
         }
         productos.push(objNuevoProducto);
         fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,""));
@@ -42,11 +42,20 @@ const controlador = {
     },
     update: (req,res) =>{
         let idProducto = req.params.idProducto;
+        let nombreImagen = null;
+        
+        if(req.file){
+            nombreImagen = req.file.filename;
+        }
         for(obj of productos){
             if(obj.id==idProducto){
                 obj.nombre=req.body.nombre;
                 obj.precio=parseInt(req.body.precio);
                 obj.descripcion=req.body.descripcion;
+                if(nombreImagen){
+                    fs.unlinkSync(path.join(__dirname,'../public/imagenes',obj.imagen));
+                    obj.imagen=nombreImagen;
+                }
                 break;
             }
         }
@@ -74,6 +83,7 @@ const controlador = {
         let nuevoArregloProductos = productos.filter(function(e){
             return e.id != idProducto;
         });
+        fs.unlinkSync(path.join(__dirname,'../public/imagenes',obj.imagen));
         fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,""));
         res.redirect("/products/lista-productos");
     }

@@ -41,5 +41,11 @@ main{
     font-weight: 600;
     opacity: 0.8;
 }
+.detalle{
+    text-decoration: none;
+    color:rgb(10, 119, 10);
+   font-weight: 550;
+   opacity: 0.8;
+}
 
   

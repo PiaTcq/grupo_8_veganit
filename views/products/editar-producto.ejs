@@ -19,7 +19,7 @@
     <main>
     <div>
         <h3>Editando el plato: <%= productoEnEdicion.nombre %></h3>
-        <form action="/products/editar-producto/<%= productoEnEdicion.id %>?_method=PUT" method="POST" class="formulario-crear">
+        <form action="/products/editar-producto/<%= productoEnEdicion.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario-crear">
             <div class="Crear-producto">
                 <p>Ingresar nombre del producto:</p>
                 <input type="text" placeholder="" value="<%= productoEnEdicion.nombre %>" name="nombre" class="barraProduc">
@@ -35,7 +35,7 @@
             <div>
                 <p class="txt-agregar-img">Agregar imagen del producto:</p>
                 <div class="agregar-imagen">
-                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <input type="file" name="imagen" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 </div>
             </div>
             <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04"> Editar</button>

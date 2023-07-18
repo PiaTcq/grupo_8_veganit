@@ -39,6 +39,7 @@ main{
     opacity: 0.9;
     padding-bottom: 10px;
 }
+
 @media (max-width:449px){
 
     .producto-box{
