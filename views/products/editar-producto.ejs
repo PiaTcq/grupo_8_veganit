@@ -18,18 +18,19 @@
     <br>
     <main>
     <div>
-        <form action="/editar-producto" method="POST" class="formulario-crear">
+        <h3>Editando el plato: <%= productoEnEdicion.nombre %></h3>
+        <form action="/products/editar-producto/<%= productoEnEdicion.id %>?_method=PUT" method="POST" class="formulario-crear">
             <div class="Crear-producto">
                 <p>Ingresar nombre del producto:</p>
-                <input type="text" placeholder="" value="" name="nombre-producto" class="barraProduc">
+                <input type="text" placeholder="" value="<%= productoEnEdicion.nombre %>" name="nombre" class="barraProduc">
             </div>
             <div class="login">
                 <p>Ingresar precio del producto:</p>
-                <input type="text" placeholder="" value="" name="precio-producto" class="barraProduc">
+                <input type="text" placeholder="" value="<%= productoEnEdicion.precio %>" name="precio" class="barraProduc">
             </div>
             <div class="form-floating">
                 <p>Agregar descripción del producto:</p>
-                <textarea type="text" value="" name="descripcion-producto" class="descripcion"></textarea>
+                <textarea type="text" name="descripcion" class="descripcion"><%= productoEnEdicion.descripcion %></textarea>
             </div>
             <div>
                 <p class="txt-agregar-img">Agregar imagen del producto:</p>
@@ -37,7 +38,7 @@
                     <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 </div>
             </div>
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"> Añadir</button>
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04"> Editar</button>
         </form>
     </div>
     </main>

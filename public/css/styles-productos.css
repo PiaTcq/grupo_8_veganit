@@ -10,11 +10,14 @@ main{
     padding: 15px 15px 10px 25px;
     border-radius: 3%;
 }
+.ancor{
+    text-decoration: none;
+}
 .nombrePlato{
     color:#dd3939;
     font-weight: 600;
     opacity: 0.9;
-    padding-bottom: 10px;
+    padding-bottom: 10px
 }
 .producto{
     display: flex;

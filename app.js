@@ -7,8 +7,15 @@ const productsRoutes = require("./routes/productsRoutes");
 //const carritoRoutes = require("./routes/carritoRoutes");
 
 const express = require('express');
+const methodOverride = require('method-override');
 const path = require('path');
 const app = express();
+
+//agregado recientemente
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'));
+
 
 app.set("view engine", "ejs");
 

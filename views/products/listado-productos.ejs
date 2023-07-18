@@ -18,15 +18,19 @@
         <div class="container">
             <div class="row">
                 <h2 class="tituloPrincipal">Nuestro menu disponible:</h2>
+                    <% for(let i=0;i<productos.length;i++){%>
                     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="plato-caja">
-                            <h4 class="nombrePlato">Veggie Burguer</h4>
-                            <h6 class="numeroPlato">Plato N.º: 1</h6>
-                            <a class="imagenPlato" href=""><img width="150" height="150px" src="/imagenes/veggie-burguer.webp"></a>
-                            <p class="precio">$2.500</p>
-                            <p class="descripcion">Authentic Veggie Patty Burger Loaded With Healthy Veggies.</p>
+                            <a class="ancor" href="/products/detalle-producto/<%= productos[i].id %>">
+                            <h4 class="nombrePlato"><%= productos[i].nombre %></h4>
+                            <h6 class="numeroPlato">Plato N.º:<%= productos[i].id %></h6>
+                            <a class="imagenPlato" href=""><img width="150" height="150px" src="/imagenes/<%= productos[i].imagen %>"></a>
+                            <p class="precio">$<%= productos[i].precio %></p>
+                            <p class="descripcion"><%= productos[i].descripcion %></p>
+                            </a>
                         </div>
                     </div>
+                    <% } %>
                 </div>
             </div>
         </div>
