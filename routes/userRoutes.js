@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get("/login", loginController.login);
 
-router.get("/lista", registerController.lista);
+//router.get("/lista", registerController.lista);
+
+router.get("/lista-usuarios",registerController.lista2);
 
 router.get("/register", registerController.register);
 router.post("/register", registerController.postRegister);

@@ -61,17 +61,20 @@ const controlador = {
         res.send("fallo al editar :(")
     }
     },
-    lista:(req,res)=>{
-        const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-        res.render("users/lista", {cuentas});
-    },
+    //lista:(req,res)=>{
+   //     const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
+    //    res.render("users/lista", {cuentas});
+   // },
     delete:(req,res)=>{
-        //console.log("se borró ma boy")
         const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
         const borrado = cuentas.filter(cuentita => cuentita.id.toString() != req.params.id.toString());
         fs.writeFileSync(cuentasPath, JSON.stringify(borrado, null, " "));
         res.redirect("/");
-    }
+    },
+    lista2:(req,res)=>{
+        const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
+        res.render("users/lista-usuarios", {cuentas});
+}
 }
 
 

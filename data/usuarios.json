@@ -1,45 +1,44 @@
 [
  {
-  "id": "2",
-  "nombre": " Oscar Jr ",
-  "contraseña": " brad pritt ",
-  "confirmar": " brad pritt ",
-  "email": "oscar@gmail.com",
-  "pais": " Brasil ",
-  "localidad": " Sao Paolo ",
-  "direccion": " Pato 2008 ",
-  "genero": "hombre"
- },
- {
-  "id": 3,
-  "nombre": "German",
-  "contraseña": "fifi",
-  "confirmar": "fifi",
-  "email": "holasoygerman@gmail.com",
-  "pais": "chile",
-  "localidad": "valparaiso",
-  "direccion": "chupaelperro",
-  "genero": "hombre"
- },
- {
   "id": 1689705631809,
-  "nombre": "Dybala",
-  "contraseña": "juventus",
-  "confirmar": "juventus",
+  "nombre": " Dybala ",
+  "contraseña": " juventus ",
+  "confirmar": " juventus ",
   "email": "dybala@gmail.com",
-  "pais": "Italia",
-  "localidad": "Roma",
-  "direccion": "totti 89",
-  "genero": "hombre"
+  "pais": " Italia ",
+  "localidad": " Roma ",
+  "direccion": " totti 889 "
  },
  {
   "id": 1689707915423,
-  "nombre": " Matias ",
-  "contraseña": " mapache ",
-  "confirmar": " mapache ",
+  "nombre": "  Matias  ",
+  "contraseña": "  mapache  ",
+  "confirmar": "  mapache  ",
   "email": "hola@gmail.com",
-  "pais": " argentina",
-  "localidad": " resistencia ",
-  "direccion": " arroz 108 "
+  "pais": "  argentina ",
+  "localidad": "  resistencia  ",
+  "direccion": " fideos 108  "
+ },
+ {
+  "id": 1689808243840,
+  "nombre": "Pato",
+  "contraseña": "QUAKQUAK",
+  "confirmar": "QUAKQUAK",
+  "email": "pato@gmail.com",
+  "pais": "brazil",
+  "localidad": "brasil",
+  "direccion": "bracil",
+  "genero": "no"
+ },
+ {
+  "id": 1689808413200,
+  "nombre": "Dragon",
+  "contraseña": "aaaaaa",
+  "confirmar": "aaaaaa",
+  "email": "Fuego@gmail.com",
+  "pais": "Gales",
+  "localidad": "Cardiff",
+  "direccion": "Ramsey 88",
+  "genero": "hombre"
  }
 ]
