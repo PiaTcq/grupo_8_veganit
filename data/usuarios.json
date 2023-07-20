@@ -1,15 +1,5 @@
 [
  {
-  "id": 1689705631809,
-  "nombre": " Dybala ",
-  "contraseña": " juventus ",
-  "confirmar": " juventus ",
-  "email": "dybala@gmail.com",
-  "pais": " Italia ",
-  "localidad": " Roma ",
-  "direccion": " totti 889 "
- },
- {
   "id": 1689707915423,
   "nombre": "  Matias  ",
   "contraseña": "  mapache  ",
@@ -39,6 +29,17 @@
   "pais": "Gales",
   "localidad": "Cardiff",
   "direccion": "Ramsey 88",
+  "genero": "hombre"
+ },
+ {
+  "id": 1689816980861,
+  "nombre": "dfsdfsdf",
+  "contraseña": "dfsdf",
+  "confirmar": "sdfsdf",
+  "email": "n@outlook.es",
+  "pais": "dsdfsd",
+  "localidad": "fdsfsd",
+  "direccion": "sdfsdf",
   "genero": "hombre"
  }
 ]
