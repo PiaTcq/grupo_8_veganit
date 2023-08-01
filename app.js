@@ -8,7 +8,9 @@ app.listen(3000, ()=>{
 });
 
 /* aca van las rutas */
-app.get("/producto", (req,res)=>res.sendFile(path.join(__dirname, "/views/detalle-producto.html")));
+app.get("/", (req,res)=>{
+  res.sendFile(path.join(__dirname, "/views/detalle-producto.html"))
+  });
 
 app.get("/login",(req, res)=>{
     res.sendFile(path.join(__dirname + "/views/login.html"))
