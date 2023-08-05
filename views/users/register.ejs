@@ -11,6 +11,12 @@
     <main class="main">
             <div class="caja" align="center"> 
                 <h1 class="ejemplo"> CREA TU CUENTA </h1>
+                <% if (locals.errors) {
+                    locals.errors.forEach(error => {  %>
+                      <p> <%= error.msg %> </p>
+                    <% }) 
+                  } %>
+         
             <form action="/users/register" method="post"> 
         <div class="seccion"> 
             <div class="seccionuno"> 
@@ -44,7 +50,7 @@
                     <option value="no"> prefiero no contestar</option>
                 </select>
             </div>
-        </div>
+        </div> 
         <div class="seccioncita"> 
                 <br> 
                 <br>

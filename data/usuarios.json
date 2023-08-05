@@ -41,5 +41,109 @@
   "localidad": "fdsfsd",
   "direccion": "sdfsdf",
   "genero": "hombre"
+ },
+ {
+  "id": 1691237902574,
+  "nombre": "Civer",
+  "contraseña": "lucario",
+  "confirmar": "lucario",
+  "email": "civer@gmail.com",
+  "pais": "chile",
+  "localidad": "santiago ",
+  "direccion": "optimus 33",
+  "genero": "hombre"
+ },
+ {
+  "id": 1691239214466,
+  "nombre": "pato ",
+  "contraseña": "$2a$10$rCjqoR/OGC40xwqtTWaEz.E4UNw1cwSapYmKB/UvvTNR5tIKMvmnm",
+  "confirmar": "brasileiro",
+  "email": "pato@gmail.com",
+  "pais": "Indonesia ",
+  "localidad": "indo",
+  "direccion": "in",
+  "genero": "no"
+ },
+ {
+  "id": 1691240802007,
+  "nombre": "",
+  "contraseña": "$2a$10$5p9XnjYHOb5CpGXCouOFqOtiogUngin0M7PIgfHzlRgPjjp1d2G7a",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691240901367,
+  "nombre": "",
+  "contraseña": "$2a$10$h4KVwzxtlZ7FTb7XTp9XruV.yMrVt5wEP3be833PVLeFT6N/cpGla",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691242033198,
+  "nombre": "sdf",
+  "contraseña": "$2a$10$iaWV4oblLfxG3Z2sbseeQ.hkEvP660EcJUhXgEpIz8Yuzk4Nmc4qm",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691243245777,
+  "nombre": "sdf",
+  "contraseña": "$2a$10$FeWs9PfC.gox1FqRoEapaeeLkJYDbfPXHxTJLk0drxWtdm4vW/bm6",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691243581790,
+  "nombre": "dsfs",
+  "contraseña": "$2a$10$TqXBYqNu7s7dBFdY9hW25.difYB2Dw1bYm5FKP6kAWVbu5wpHWFXe",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691244432843,
+  "nombre": "sdfsdf",
+  "contraseña": "$2a$10$XXZ4mBcFLLhmAjkG71PAB.knIEyQZDJt9TtubWmikQ/Vw5xGZ/8rK",
+  "confirmar": "",
+  "email": "",
+  "pais": "",
+  "localidad": "",
+  "direccion": ""
+ },
+ {
+  "id": 1691246309843,
+  "nombre": "vlahovic",
+  "contraseña": "$2a$10$rr6lp88ZKcTjrUtwdC9si.EYBXJu2euo0mEyAviQ.q0AypIlfLf1C",
+  "confirmar": "piemonte",
+  "email": "dusan@gmail.com",
+  "pais": "serbia",
+  "localidad": "belgrado",
+  "direccion": "piero38",
+  "genero": "hombre"
+ },
+ {
+  "id": 1691246457088,
+  "nombre": "chi",
+  "contraseña": "$2a$10$ED7SNwT.EOpf5GWAOM8UfejIjI4wyeTYFgAzxpxhQzFEtyYUDXbPu",
+  "confirmar": "as",
+  "email": "rabiot@gmail.com",
+  "pais": "as",
+  "localidad": "as",
+  "direccion": "as",
+  "genero": "hombre"
  }
 ]
