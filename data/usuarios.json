@@ -145,5 +145,72 @@
   "localidad": "as",
   "direccion": "as",
   "genero": "hombre"
+ },
+ {
+  "id": 1691362468843,
+  "nombre": "sadasd",
+  "confirmar": "dasd",
+  "email": "aaaa@gmail.com",
+  "pais": "sadasd",
+  "localidad": "asdasd",
+  "direccion": "Jero town",
+  "genero": "no"
+ },
+ {
+  "id": 1691362566001,
+  "nombre": "aaa",
+  "confirmar": [
+   "aaa",
+   "aaa"
+  ],
+  "email": "mail@gmail.com",
+  "pais": "dsfsd",
+  "localidad": "fsdf",
+  "direccion": "dfsd",
+  "genero": "hombre",
+  "imagen": "1691362565955.jpeg"
+ },
+ {
+  "id": 1691362925776,
+  "nombre": "dsfsdf",
+  "email": "juan@gmail.com",
+  "pais": "sdfsd",
+  "localidad": "sfsdfd",
+  "direccion": "sdfds",
+  "genero": "hombre",
+  "imagen": "1691362925735.jpg"
+ },
+ {
+  "id": 1691363121738,
+  "nombre": "sdfsdf",
+  "password": "sdf",
+  "email": "juan@gmail.com",
+  "pais": "dsfsdf",
+  "localidad": "sdfsdf",
+  "direccion": "fdsf",
+  "genero": "hombre",
+  "imagen": "1691363121618.jpg"
+ },
+ {
+  "id": 1691363272299,
+  "nombre": "fdsfds",
+  "password": "$2a$10$cxS1sfUbqRg2rxU52YC2r.WIFtqIhaMnCeHXT22jxIzN6esRnANp2",
+  "email": "pato@gmail.com",
+  "pais": "fsdf",
+  "localidad": "fsdf",
+  "direccion": "fdsf",
+  "genero": "hombre",
+  "imagen": "1691363272089.png"
+ },
+ {
+  "id": 1691363820190,
+  "nombre": "Reptile",
+  "password": "$2a$10$YoSAq4GD6cAcPPx9MKusPO15eDGhMLHaf3LCoGFwtT0oc4.QRT6s6",
+  "email": "reptile@gmail.com",
+  "pais": "Outworld",
+  "localidad": "pantano",
+  "direccion": "las greñas 88",
+  "genero": "hombre",
+  "imagen": "1691363820171.jpg"
  }
 ]

@@ -88,6 +88,9 @@
     justify-content: flex-start;
     width: 60%;
 }
+.avr{
+    width: 60%;
+}
 
 .lista{
     border-top: solid 5px black;
