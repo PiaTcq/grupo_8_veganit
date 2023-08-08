@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link href="../css/styles-carrito.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/418aba2bb0.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="barra-navegacion">
+           <div class="atras-nav">
+            <a href="/" class="atras-nav"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+           </div>
+           <div>
+            <p class="titulo-nav">Veganit</p>
+           </div>
+           <div>
+            <p class="titulo-oculto">Veganit!!</p>
+           </div>
+        </nav>
+    </header>
+    <main>
+        <br>
+        <br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 main-up-left">
+                    <h5 class="titulo-restaurant"> Productos seleccionados:</h5>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <p>Producto 1</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <div class="productos">
+                                    <img src="/imagenes/ensalada.webp">
+                                    <ul>
+                                        <li class="negrilla">Ensalada clásica</li>
+                                        <li class="clarita">Contiene mix de hojas verdes,tomate y lechuga</li>
+                                        <li class="negrilla">$1.056</li>
+                                    </ul>
+                                </div> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <p>Producto 2</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <div class="productos">
+                                    <img src="/imagenes/sprite.webp">
+                                    <ul>
+                                        <li class="negrilla">Gaseosa Sprite Lima Limón 310Cc.</li>
+                                        <li class="clarita">Sprite lata 310ml</li>
+                                        <li class="negrilla">$400</li>
+                                    </ul>
+                                </div> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <p>Producto 3</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <div class="productos">
+                                    <img src="/imagenes/tarta.webp">
+                                    <ul>
+                                        <li class="negrilla">1/2 tarta Cebolla Choclo</li>
+                                        <li class="clarita">Media tarta de choclo, cebolla y crema</li>
+                                        <li class="negrilla">$1.300</li>
+                                    </ul> 
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 main-up-right">
+                    <h5 class="titulo-resumen">Resumen</h5>
+                    <div class="resumen">
+                        <ul class="lista1">
+                            <li class="items-lista">Costo de producto</li>
+                            <li class="items-lista">Tarifa de servicio</li>
+                            <li class="items-lista">Costo de envío</li>
+                            <li class="items-lista">Propina</li>
+                            <li class="negrilla">Total</li>
+                        </ul>
+                        <ul class="lista2">
+                            <li class="items-lista">$1.456</li>
+                            <li class="items-lista">$120</li>
+                            <li class="items-lista">$80</li>
+                            <li class="items-lista">$0.00</li>
+                            <li class="negrilla">$2.956</li>
+                        </ul>
+                    </div>
+                    <form action="" method="POST">
+                    <div class="d-grid gap-2 boton-pago"><button type="button" class="btn btn-outline-success">Enviar pedido</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="horario"> 
+                <p class="horario-entrega">Horario de entrega estimado:<p>
+                <p class="tiempo"> 22 - 40 min <i class="fa-solid fa-clock" style="color: #8f8f8f;"></i></p>
+            </div>
+            <br>
+            <br>            
+            <div class="row">
+                <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                    <h6 class="titulo-metodospago"><i class="fa-regular fa-circle-check" style="color: #8f8f8f;"></i> Métodos de pago</h6>
+                    <div class="metodos-up">
+                        <p class="metodo-disponible">Métodos disponibles:</p>
+                        <br>
+                        <form action="" method="POST">
+                            <div class="form-check check-metodo">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    <i class="fa-solid fa-dollar-sign" style="color: #8f8f8f;"></i> Efectivo
+                                </label>
+                              </div>
+                              <div class="form-check check-metodo">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    <i class="fa-brands fa-cc-visa" style="color: #8f8f8f;"></i> 45612****6325 <p class="tarjeta">Aguirre Nicolas L</p>
+                                </label>
+                              </div>
+                        </form>
+                    </div> 
+                    <br>                  
+                    <div class="metodos-down">
+                        <p class="agregar-metodo">Agregar método de pago:</p>
+                        <a class="text-decoration" href=""><p class="agregar-tarjeta"><i class="fa-solid fa-credit-card" style="color: #8f8f8f;"></i> Agregar tarjeta de crédito o débito</p></a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                    <div class="cupon">
+                        <p class="texto-cupon"><i class="fa-solid fa-ticket" style="color: #8f8f8f;"></i> Cupón:</p>
+                        <a class="agregar-cupon" href="">+ agregar</a>
+                    </div>
+                    <div class="propinas-all">
+                    <div class="propinas">
+                        <p>Añade propina</p>
+                        <p class="p-repartido">El total de la propina va para el repartidor</p>
+                    </div>
+                    <p class="p-contribucion">¡Tu contribución es de gran ayuda para ellos!</p>
+                    <div class="porcentaje-propina">
+                        <form action="" method="POST">
+                        <label>0%<input type="radio" name="propina" value="0%" checked></label>
+                        <label>2%<input type="radio" name="propina" value="2%"></label>
+                        <label>4%<input type="radio" name="propina" value="4%"></label>
+                        <label>8%<input type="radio" name="propina" value="8%"></label>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+
+        </div>
+    <br>
+    <br>
+    </main>
+
+    <footer>
+        <div class="pie-de-pagina">
+            <a href="">Inicio</a>
+            <a href=""> Nosotros</a>
+            <a href=""> Tienda</a>
+            <a href=""> Ayuda </a>
+        </div>
+        <p><i class="fa-regular fa-copyright" style="color: #8f8f8f;"></i> Veganit</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -2,32 +2,28 @@
 <html> 
     <head> 
         <meta charset="utf-8">
-        <link href = "css/stylemati.css" rel = "stylesheet">
-        <title> Login </title>
+        <link href = "../css/stylemati.css" rel = "stylesheet">
+        <title> Register </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="pagina"> 
-    <header class="header"> 
-                <div class="cabeza">  <img width="75px" height="75px" src = imagen/grumpy.jpg alt="logo">
-                    <h1> Hola</h1>
-                </div>
-    </header>         
+    <%- include("../partials/header")%>        
     <main class="main">
             <div class="caja" align="center"> 
                 <h1 class="ejemplo"> CREA TU CUENTA </h1>
-            <form> 
+            <form action="/users/register" method="post"> 
         <div class="seccion"> 
             <div class="seccionuno"> 
-                <input type="text" name="usuario" id="usuario" placeholder="nombre de usuario..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..." style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
                 <input type="password" name="contraseña" id="contraseña" placeholder="contraseña..." style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br> 
-                <input type="password" name="contraseña" id="contraseña" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
+                <input type="password" name="confirmar" id="confirmar" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
                 <br>
                 <br>
-                <input type="email" name="correo" id="correo" placeholder="e-mail..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="email" name="email" id="email" placeholder="e-mail..." style="width: 230px; height: 35px; font-size:25px;">
                 <br> 
             </div>
           
@@ -36,6 +32,9 @@
                 <br>
                 <br>
                 <input type="text" name="localidad" id="localidad" placeholder="localidad..." style="width: 230px; height: 35px; font-size:25px;">
+                <br>
+                <br>
+                <input type="text" name="direccion" id="direccion" placeholder="dirección..." style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
                 <select name="genero" style="width: 230px; height: 35px; font-size:20px;">
@@ -60,16 +59,16 @@
             </div>
         </div>
                 <br>
-                <button type="submit" class="boton"> <a href="/login">  registrarse </a> </button> 
+                <button type="submit" class="boton">   registrarse  </button> 
                 <br>
                 <br>
             </form>
              </div>
     </main>
+    <br>
+    <br>
 
-    <footer class="footer">
-            <h1> ADIOs</h1>
-    </footer>
+    <%- include("../partials/footer") %>
 
     </body>
 </html>

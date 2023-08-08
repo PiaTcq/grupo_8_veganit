@@ -1,0 +1,54 @@
+main{
+    background-color: rgba(247,191,178,0.1);  
+}
+.titulo-detalle{
+    font-weight: 500;
+    opacity: 0.6;
+    padding: 5px 5px;
+    border-radius: 3%;
+    background-color: rgba(217,217,217,0.4);
+    border:solid 0.2px rgb(225, 224, 224);
+    margin-bottom: 45px;
+}
+.producto-box{
+    display: flex;
+    background-color: white;
+    border-radius: 3%;
+    justify-content: space-around;
+}
+.atributos-plato{
+    padding: 25px 15px 15px 30px;
+}
+.nombrePlato{
+    color:#dd3939;
+    font-weight: 600;
+    opacity: 0.9;
+    padding-bottom: 10px;
+}
+.numeroPlato{
+    font-weight: 600;
+}
+.precio{
+    padding-top: 5px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+.descripcion{
+    padding-top: 15px;
+    font-weight: 500;
+    opacity: 0.9;
+    padding-bottom: 10px;
+}
+
+@media (max-width:449px){
+
+    .producto-box{
+        display: inline-block;
+        background-color: white;
+        border-radius: 3%;
+        justify-content: space-around;
+    }
+}
+
+
+

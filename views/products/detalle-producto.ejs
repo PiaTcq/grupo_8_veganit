@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto</title>
+    <link href="../css/styles-producto.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/418aba2bb0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container">
+          <div class="row">
+                <div class="containe-fluid">
+                  <a href="/" class="cerrar-ventana"><i class="fa-solid fa-xmark" style="color: #898b90;"></i></a>
+                  <img src="/imagenes/poke-vegano.jpeg" class="card-img-top" alt="wrap">
+                    <h5 class="nombre-producto"> Poke vegano</h5>
+                    <p class="descripcion-producto">Poke con garbanzos marinados, palta, boniato asado, repollo colorado, chauchas, zanahoria rallada, arroz de Sushi, cebolla de verdeo, maíz crocante y semillas de sésamo. Con tu salsa preferida</p>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <p>Salsa a elección</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <div>
+                                    <ul>
+                                        <li class="negrilla"><label>Siracha mayo</label><input class="boton-seleccion" type="radio" name="salsa" value="siracha-mayo" checked></li>
+                                        <li class="negrilla"><label>Teriyaki mayo<input class="boton-seleccion" type="radio" name="salsa" value="teriyaki-mayo"></label></li>
+                                        <li class="negrilla"><label>Ceviche mayo<input class="boton-seleccion" type="radio" name="salsa" value="ceviche-mayo"></label></li>
+                                        <li class="negrilla"><label>Teriyaki<input class="boton-seleccion" type="radio" name="salsa" value="teriyaki"></label></li>
+                                        <li class="negrilla"><label>Soja<input class="boton-seleccion" type="radio" name="salsa" value="soja"></label></li>
+                                    </ul>
+                                </div> 
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <p>Adicional</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <div class="productos">
+                                    <ul>
+                                      <li class="negrilla"><label>Queso crema</label><input class="boton-seleccion" type="radio" name="propina" value="siracha-mayo" checked></li>
+                                    </ul>
+                                </div> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                       <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                       <label for="floatingTextarea">Notas al producto</label>
+                      </div>
+                  </div>
+                <div class="boton-agregar">
+                  <div class="mas-menos">
+                    <form action="" method="POST">
+                      <button type="button" class="btn btn-outline-success">+</button>
+                    </form>
+                    <div class="numero">
+                      <p>1</p>
+                    </div>
+                    <form action="" method="POST">
+                      <button type="button" class="btn btn-outline-success">-</button>
+                    </form>
+                  </div>
+                  <div>
+                    <form action="" method="POST">
+                    <button type="button" class="btn btn-outline-success">Agregar</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <br>
+      <br>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <br>
+    <br>
+    <%- include("../partials/footer") %>
+</body>
+</html>

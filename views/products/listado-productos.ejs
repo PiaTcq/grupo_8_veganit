@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Productos</title>
+        <link href="../css/styles-productos.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/418aba2bb0.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+    <br>
+    <br>
+        <div class="container">
+            <div class="row">
+                <h2 class="tituloPrincipal">Nuestro menu disponible:</h2>
+                    <% for(let i=0;i<productos.length;i++){%>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="plato-caja">
+                            <a class="ancor" href="/products/detalle-producto/<%= productos[i].id %>">
+                            <h4 class="nombrePlato"><%= productos[i].nombre %></h4>
+                            <h6 class="numeroPlato">Plato N.º:<%= productos[i].id %></h6>
+                            <a class="imagenPlato" href="/products/detalle-producto/<%= productos[i].id %>"><img width="150" height="150px" src="/imagenes/<%= productos[i].imagen %>"></a>
+                            <p class="precio">$<%= productos[i].precio %></p>
+                            <p class="descripcion"><%= productos[i].descripcion %></p>
+                            <a class="ancor" href="/products/detalle-producto/<%= productos[i].id %>"><p class="detalle">Ver detalle</p></a>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <%- include("../partials/footer") %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

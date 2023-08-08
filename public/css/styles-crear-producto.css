@@ -1,0 +1,41 @@
+main{
+    background-color: rgba(247,191,178,0.1);
+    
+}
+.titulo-crear{
+    padding-left: 45px;
+    font-weight: 500;
+}
+.formulario-crear{
+    text-align: left;
+    padding-left: 45px;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.barraProduc{
+    width: 30%;
+    
+}
+.form-floating{
+    width: 40%;   
+}
+.agregar-imagen{
+    width: 30%;
+    padding-bottom: 25px;
+    
+}
+.txt-agregar-img{
+    color:#dd3939;
+    opacity: 0.9;
+}
+p{  
+    padding-top:15px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+.descripcion{
+    padding-top:15px;
+    width:40%;
+    
+}
+

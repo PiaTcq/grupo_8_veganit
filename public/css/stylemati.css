@@ -89,6 +89,19 @@
     width: 60%;
 }
 
+.lista{
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    background-color: pink;
+}
+
+.deleteyedit{
+    font-size: 25px;
+    width: 200px; 
+    height: 50px;
+    background-color: orangered;
+}
+
 /*.ejemplo{
     border: solid 5px black;
     margin-left: 120px;
@@ -129,17 +142,3 @@
     }
     }
 }
-/*@media (min-width:881px )/*compus{
-    body{
-          .caja{
-            flex-wrap: wrap;
-            width: 75%;
-            align-items: center;
-          .seccion{
-            flex-wrap: wrap;
-            width: 100%;
-            align-items: center;
-          }
-    }
-    }
-}*/

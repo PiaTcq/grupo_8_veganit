@@ -1,0 +1,76 @@
+
+main{
+    background-color: rgba(247,191,178,0.1);
+}
+.formulario-login{
+    padding: 20px 15px;
+    text-align: center;
+    
+}
+.login{
+    margin-bottom: 35px;
+}
+.loginPass{
+    margin-bottom: 15px;
+}
+.recuperar-pass{
+    text-decoration: none;
+    color:grey;
+    opacity: 0.7;
+}
+.barra-login{
+    width:50%;
+    height: 30px;
+    border:solid 0.2px rgb(225, 224, 224);
+    border-radius: 5px;
+    opacity: 0.8;
+}
+.button-login{
+    border:solid 0.2px rgb(225, 224, 224);
+    background-color: rgba(247,191,178,0.9);
+    border-radius: 5px;
+    width: 40%;
+    height: 30px;
+    color:black;
+    opacity: 0.7;
+    font-weight: 500;
+    margin: 40px 0 0 0 ;
+    
+}
+.crea-cuenta{
+    border:solid 0.2px rgb(225, 224, 224);
+    background-color: rgba(217,217,217,0.8);
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    color:black;
+    margin-top: 25px;
+    opacity: 0.7;
+    font-weight: 500;   
+}
+.button-login:hover{
+    background-color: rgb(247,191,180);
+    opacity: 0.9;
+}
+.crea-cuenta:hover{
+    background-color: rgb(217,217,219);
+    opacity: 0.9;
+}
+.texto-creacuenta{
+    text-decoration: none;
+    color:black;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+
+@media (max-width:335px){
+    .botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .crea-cuenta{
+        height: 72px;
+    }
+}

@@ -1,0 +1,259 @@
+
+main{
+    background-color: #f8edeb;
+}
+.barra-navegacion{
+    display: flex;
+    background-color: rgba(217,217,217,0.6);
+    justify-content: space-between;
+}
+.titulo-oculto{
+    visibility: hidden;
+}
+.titulo-nav{
+    color: #f7bfb2;
+    font-weight: bold;
+    font-size: 35px;
+    padding-top:15px;
+}
+.atras-nav{
+    font-size: 18px;
+    color: #8f8f8f;
+    text-decoration: none;
+    padding-top: 25px;
+    padding-left: 15px;
+}
+.container{
+    padding-top: 20px;
+}
+.container li{
+    list-style: none;
+}
+.titulo-restaurant{
+    border:solid 0.2px rgb(225, 224, 224);
+    width: 100%;
+    border-radius: 3%;
+    padding: 5px;
+    opacity: 0.9;
+    background-color: rgba(247,191,178,0.6);
+}
+.main-up-left{
+    padding-right: 20px;
+    padding-bottom: 15px;
+}
+.main-up p{
+    font-weight: 600;
+}
+.negrilla{
+    font-weight: 500;
+}
+.clarita{
+    opacity: 0.6;
+}
+.resumen li{
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+.items-lista{
+    font-weight: 500;
+    opacity: 0.7;
+}
+.lista1{
+    padding:10px 40px 5px 10px;
+}
+.lista2{
+    padding:10px 10px 5px 40px;
+}
+.titulo-resumen{
+    border:solid 0.2px rgb(225, 224, 224);
+    width: 100%;
+    border-radius: 6%;
+    padding: 5px 0 5px 10px;
+    background-color: rgba(217,217,217,0.3);
+}
+.boton-pago{
+    padding-top: 10px;
+    
+}
+.titulo-metodospago{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border:solid 0.2px rgb(225, 224, 224);
+    border-radius: 3%;
+    background-color: rgba(217,217,217,0.3);
+}
+.metodos-up{
+    padding: 10px 10px 10px 0;
+}
+.metodo-disponible{
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size:16px;
+    font-weight: 500;
+}
+.form-check-label{
+    padding-left: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.form-check-input{
+    padding-left:5px;
+}
+.check-metodo{
+    padding:15px 35px 15px 15px;
+  
+}
+.tarjeta{
+    opacity: 0.6;
+}
+
+.productos{
+    display: flex;
+}
+.horario{
+    display: flex;    
+}
+.horario-entrega{
+    padding: 0 30px 0 2px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.tiempo{
+    padding-left: 50px;
+    font-weight: 600;
+}
+.resumen{
+    display: flex;
+    border:solid 0.2px rgb(225, 224, 224);
+    width: 100%;
+    border-radius: 3%;
+    justify-content: space-between;
+    background-color: rgba(217,217,217,0.3);
+}
+.metodos-up{
+    display: flex;
+    border:solid 0.2px rgb(225, 224, 224);
+    border-radius: 3%;
+    justify-content: space-between;
+    background-color: rgba(217,217,217,0.3);
+}
+.metodos-down{
+    display: flex;
+    justify-content: space-between;
+    border:solid 0.2px rgb(225, 224, 224);
+    border-radius: 3%;
+    background-color: rgba(217,217,217,0.3);
+    padding: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+.agregar-metodo{
+    padding: 15px;
+    font-size:16px;
+    font-weight: 500;
+}
+.agregar-tarjeta{
+    border:solid 0.2px rgb(225, 224, 224);
+    border-radius: 3%;
+    padding: 10px;
+    background-color: white;
+}
+.text-decoration{
+    text-decoration: none;
+    color:black;
+    opacity: 0.7;
+    font-weight: 500;
+}
+.cupon{
+    display: flex;
+    justify-content: space-between;
+    border:solid 0.2px rgb(225, 224, 224);
+    background-color: rgba(247,191,178,0.6);
+    border-radius: 3%;
+    padding:5px;
+}
+.propinas{
+    display: flex;
+    justify-content: space-between;
+    border-bottom:solid 1px rgba(0,0,0,0.1) ;
+    font-weight: 500;
+    opacity: 0.8;
+    text-align: justify;
+
+}
+.propinas-all{
+    border:solid 0.2px rgb(225, 224, 224);
+    background-color: rgba(247,191,178,0.6);
+    border-radius: 3%;
+    padding:5px;
+    margin-top: 10px;
+}
+.propinas-all p{
+    padding:5px;
+}
+.texto-cupon{
+    padding-top: 10px;
+    padding-left:10px;
+    font-weight: 500;
+}
+.agregar-cupon{
+    padding-top: 10px;
+    padding-right:10px;
+    font-weight: 600;
+    color:#dd3939;
+    text-decoration: none;
+}
+.p-contribucion{
+    text-align: center;
+    padding-top: 5px;
+    font-weight: 500;
+    color:#dd3939;
+}
+.porcentaje-propina{
+    text-align: center;
+    padding-bottom: 5px;
+}
+.porcentaje-propina label{
+    padding-right: 25px;
+    font-weight: 600;
+    opacity:0.9;
+}
+.p-repartido{
+    opacity: 0.8;
+}
+footer{
+    background-color: rgba(217,217,217,0.6);
+    width: 100%;
+    
+}
+.pie-de-pagina a{
+    text-decoration: none;
+    color:black;
+    opacity:0.5;
+    padding:30px;
+    font-size: 14px;
+}
+.pie-de-pagina{
+    
+    display: flex;
+    justify-content:center;
+}
+footer p{
+    text-align: center;
+    opacity: 0.7;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+@media (max-width:360px){
+    .pie-de-pagina{
+        text-align: center;
+    } 
+    .pie-de-pagina a{
+        text-decoration: none;
+        color:black;
+        opacity:0.5;
+        padding:5px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Veganit</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="http://marmacc.alwaysdata.net/logo_veganit_hd2.png">
+      </div>
+      <div class="nav-bar-top">
+        <div class="login">
+          <button><a href="/products/lista-productos"> Menu</a></button>
+        </div>
+        <div class="login">
+          <button><a href="/products/crear-producto"> Cargar producto<i class="fa-solid fa-cart-shopping"></i></a></button>
+        </div>
+        <div class="login">
+          <button><a href="users/login"> Login <i class="fa-solid fa-user"></i></a></button>
+        </div>
+        <div class="cart">
+          <button><a href="products/carrito"> Carrito <i class="fa-solid fa-cart-shopping"></i></a></button>
+        </div>
+        <div class="fav">
+          <button><a href="products/producto"> Favoritos <i class="fa-solid fa-heart"></i></a></button>
+        </div>
+         <div class="login"> 
+          <button><a href="users/lista-usuarios"> Usuarios <i class="fa-solid fa-user"></i></a></button>
+        </div>
+        </div>
+      </div>
+      <div class="search-bar">
+        <form action="">
+          <input type="text" placeholder="¿Que estas buscando?">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </header>
+    <main class="main">
+      <div class="nav-bar-main">
+        <ul class="tiendas">
+          <li><a href="">Tiendas Cercanas</a></li>
+        </ul>
+        <ul class="market">
+          <li><a href="">Market Veggie</a></li>
+        </ul>
+        <ul class="top-tiendas">
+          <li><a href="">Top Tiendas</a></li>
+        </ul>
+        <ul class="top-comidas">
+          <li><a href="">Top Comidas</a></li>
+        </ul>
+        <ul class="recetas">
+          <li><a href="">Recetas</a></li>
+        </ul>
+        <ul class="nosotros">
+          <li><a href="">Nosotros</a></li>
+        </ul>
+      </div>
+    </main>
+    <br>
+    <br>
+    <%- include("./partials/footer") %>
+    <script src="https://kit.fontawesome.com/fc3af5a98a.js" crossorigin="anonymous"></script>
+  </body>
+</html>

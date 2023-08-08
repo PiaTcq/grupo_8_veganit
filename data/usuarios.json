@@ -1,0 +1,45 @@
+[
+ {
+  "id": 1689707915423,
+  "nombre": "  Matias  ",
+  "contraseña": "  mapache  ",
+  "confirmar": "  mapache  ",
+  "email": "hola@gmail.com",
+  "pais": "  argentina ",
+  "localidad": "  resistencia  ",
+  "direccion": " fideos 108  "
+ },
+ {
+  "id": 1689808243840,
+  "nombre": "Pato",
+  "contraseña": "QUAKQUAK",
+  "confirmar": "QUAKQUAK",
+  "email": "pato@gmail.com",
+  "pais": "brazil",
+  "localidad": "brasil",
+  "direccion": "bracil",
+  "genero": "no"
+ },
+ {
+  "id": 1689808413200,
+  "nombre": "Dragon",
+  "contraseña": "aaaaaa",
+  "confirmar": "aaaaaa",
+  "email": "Fuego@gmail.com",
+  "pais": "Gales",
+  "localidad": "Cardiff",
+  "direccion": "Ramsey 88",
+  "genero": "hombre"
+ },
+ {
+  "id": 1689816980861,
+  "nombre": "dfsdfsdf",
+  "contraseña": "dfsdf",
+  "confirmar": "sdfsdf",
+  "email": "n@outlook.es",
+  "pais": "dsdfsd",
+  "localidad": "fdsfsd",
+  "direccion": "sdfsdf",
+  "genero": "hombre"
+ }
+]
