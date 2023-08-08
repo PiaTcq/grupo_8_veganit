@@ -37,14 +37,23 @@ const validateCreateForm = [
 
 
 
-router.get("/login", loginController.login);
-
 //router.get("/lista", registerController.lista);
 
-router.get("/lista-usuarios",registerController.lista2);
+// formulario de registro 
+router.get('/register', usersController.register);
 
-router.get("/register", registerController.register);
-router.post("/register", uploadFile.single('imagen'), validateCreateForm, registerController.postRegister);
+// procesar el registro
+router.post('/register', uploadFile.single('imagen'), validations, usersController.processRegister);
+
+// formulario de login
+router.get('/login', usersController.login);
+
+// perfil de usuario
+router.get('/profile/:userId', usersController.profile);
+
+
+
+router.get("/lista-usuarios",registerController.lista2);
 
 router.get("/editar/:id", registerController.editar);
 router.put("/editar/:id", registerController.editar2);
