@@ -11,16 +11,22 @@
     <main class="main">
             <div class="caja" align="center"> 
                 <h1 class="ejemplo"> CREA TU CUENTA </h1>
-            <form action="/users/register" method="post"> 
+                <% if (locals.errors) {
+                    locals.errors.forEach(error => {  %>
+                      <p> <%= error.msg %> </p>
+                    <% }) 
+                  } %>
+         
+            <form action="/users/register" method="post" enctype="multipart/form-data"> 
         <div class="seccion"> 
             <div class="seccionuno"> 
                 <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..." style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br>
-                <input type="password" name="contraseña" id="contraseña" placeholder="contraseña..." style="width: 230px; height: 35px; font-size:25px;">
+                <input type="password" name="password" id="contraseña" placeholder="contraseña..." style="width: 230px; height: 35px; font-size:25px;">
                 <br>
                 <br> 
-                <input type="password" name="confirmar" id="confirmar" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
+                <input type="password" name="nada" id="confirmar" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
                 <br>
                 <br>
                 <input type="email" name="email" id="email" placeholder="e-mail..." style="width: 230px; height: 35px; font-size:25px;">
@@ -42,10 +48,16 @@
                     <option  value="hombre"> hombre </option>
                     <option value="mujer"> mujer </option>
                     <option value="no"> prefiero no contestar</option>
-                </select>
-            </div>
-        </div>
+                </select>  
+            </div> 
+            <br> 
+            <br>
+            <br>
+            </div> 
         <div class="seccioncita"> 
+            <div class="avr"> 
+                <p> agrega una imagen de perfil: </p>
+                    <input type="file" name="imagen"> </div>
                 <br> 
                 <br>
             <div class="secciontres"> 

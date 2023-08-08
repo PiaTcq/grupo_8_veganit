@@ -1,5 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
+const { validationResult } = require("express-validator");
 const cuentasPath = path.join(__dirname, "../data/usuarios.json")
 
 
@@ -12,21 +14,30 @@ const controlador = {
     },
         postRegister: (req, res) =>{
             const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-            newCuenta = {
+            let errors = validationResult(req);
+            if(errors.isEmpty()){
+                newCuenta = {
                 id : Date.now(),
                 nombre: req.body.nombre,
-                contraseña: req.body.contraseña,
-                confirmar: req.body.confirmar,
+                /*contraseña: bcrypt.hashSync(req.body.contraseña, 10),*/
+                /*contraseña: req.body.contraseña,*/
+                password: bcrypt.hashSync(req.body.password, 10),
+                /*password: req.body.password,*/
                 email: req.body.email,
                 pais: req.body.pais,
                 localidad: req.body.localidad,
                 direccion: req.body.direccion,
-                genero: req.body.genero
+                genero: req.body.genero,
+                imagen: req.file.filename
             }
             cuentas.push(newCuenta);
             const cuentasJson = JSON.stringify(cuentas, null, ' ')
             fs.writeFileSync(cuentasPath, cuentasJson)
             res.redirect("/")
+            }else{
+                res.render("users/register", { errors: errors.array() }); 
+            }
+            
     },
         editar:(req,res)=>{
             //res.render("users/editar");

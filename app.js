@@ -36,6 +36,7 @@ app.use("/products", productsRoutes);
 //app.use("/carrito", carritoRoutes);
 
 
+
 app.listen(3000, function(){
     console.log("Servidor Corriendo")
 });
