@@ -212,5 +212,9 @@
   "direccion": "las greñas 88",
   "genero": "hombre",
   "imagen": "1691363820171.jpg"
+ },
+ {
+  "name": "Juana",
+  "email": "juana@gmail.com"
  }
 ]

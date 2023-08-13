@@ -1,5 +1,6 @@
 const loginController = require('./../controllers/loginController');
-const registerController = require('./../controllers/registercontroller');
+const registerController = require('../controllers/registerController');
+const usersController = require('./../controllers/usersController');
 
 const multer = require('multer');
 const path = require("path");
@@ -43,7 +44,7 @@ const validateCreateForm = [
 router.get('/register', usersController.register);
 
 // procesar el registro
-router.post('/register', uploadFile.single('imagen'), validations, usersController.processRegister);
+router.post('/register', uploadFile.single('imagen'), validateCreateForm, usersController.processRegister);
 
 // formulario de login
 router.get('/login', usersController.login);

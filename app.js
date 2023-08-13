@@ -12,7 +12,7 @@ const path = require('path');
 const app = express();
 
 //agregado recientemente
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
