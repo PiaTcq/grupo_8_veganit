@@ -1,18 +1,21 @@
-//const loginRoutes = require("./routes/loginRoutes");
-//const registerRoutes = require("./routes/registerRoutes");
 const homeRoutes = require("./routes/homeRoutes");
 const userRoutes = require("./routes/userRoutes");
 const productsRoutes = require("./routes/productsRoutes");
-//const productoRoutes = require("./routes/productoRoutes");
-//const carritoRoutes = require("./routes/carritoRoutes");
+
 
 const express = require('express');
 const methodOverride = require('method-override');
 const path = require('path');
 const app = express();
+const session = require("express-session")
 
-//agregado recientemente
-app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: "buizel",
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
@@ -26,14 +29,6 @@ app.use("/", homeRoutes);
 app.use("/users", userRoutes);
 
 app.use("/products", productsRoutes);
-//./partials/footer
-//app.use("/login", loginRoutes);
-
-//app.use("/register", registerRoutes);
-
-//app.use("/producto", productoRoutes);
-
-//app.use("/carrito", carritoRoutes);
 
 
 
@@ -41,6 +36,4 @@ app.listen(3000, function(){
     console.log("Servidor Corriendo")
 });
 
-/* aca van las rutas */
-app.get("/producto", (req,res)=>res.sendFile(path.join(__dirname, "/views/detalle-producto.html")));
 

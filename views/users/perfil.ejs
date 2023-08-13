@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <meta charset="utf-8">
+        <link href = "../css/stylemati.css" rel = "stylesheet">
+        <title> Register </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="pagina"> 
+    <%- include("../partials/header")%>        
+    <main class="main">
+          <h2>   Hi <%= user.nombre %> </h2>
+          <br>
+          <br>
+          <img width="500px" src="/imagenes/<%= user.imagen %> ">
+          <br>
+          <br>
+          <button type="submit"> <a href="../users/logout">Cerrar sesión</a></button>
+          <br>
+          <br>
+    </main>
+    <br>
+    <br>
+
+    <%- include("../partials/footer") %>
+
+    </body>
+</html>

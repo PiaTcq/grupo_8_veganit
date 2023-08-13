@@ -1,6 +1,5 @@
 const loginController = require('./../controllers/loginController');
-const registerController = require('../controllers/registerController');
-const usersController = require('./../controllers/usersController');
+const registerController = require('./../controllers/registercontroller');
 
 const multer = require('multer');
 const path = require("path");
@@ -21,6 +20,19 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 
+function guestMiddleware(req,res,next){
+  if(req.session.userLogged){
+    return res.redirect("/users/perfil")
+  }
+  next();
+}
+
+function authMiddleware(req,res,next){
+  if(!req.session.userLogged){
+    return res.redirect("/users/login")
+  }
+  next();
+}
 
 
 const validateCreateForm = [
@@ -36,25 +48,27 @@ const validateCreateForm = [
     check("robot").notEmpty().withMessage("debes aceptar los terminos y condiciones y verificar que no eres un robot")
 ];
 
+/*const validateCreateFormLogin = [
+  check("usuario").notEmpty().withMessage("debes completar el nombre de usuario"),
+    check("contraseña").notEmpty().withMessage("debes completar la contraseña")
+]*/
 
 
-//router.get("/lista", registerController.lista);
+router.get("/login", guestMiddleware, loginController.login);
+/*router.post("/login",/*[
+  check("usuario").notEmpty().withMessage("debes completar este campo"),
+  check("contraseña").notEmpty().withMessage("debes completar este campo")
+],*//*validateCreateFormLogin, loginController.proccesLogin)*/
+router.post("/login", loginController.proccesLogin);
 
-// formulario de registro 
-router.get('/register', usersController.register);
-
-// procesar el registro
-router.post('/register', uploadFile.single('imagen'), validateCreateForm, usersController.processRegister);
-
-// formulario de login
-router.get('/login', usersController.login);
-
-// perfil de usuario
-router.get('/profile/:userId', usersController.profile);
-
+router.get("/perfil", authMiddleware, loginController.perfil);
+router.get("/logout", loginController.logOut);
 
 
 router.get("/lista-usuarios",registerController.lista2);
+
+router.get("/register", guestMiddleware,  registerController.register);
+router.post("/register", uploadFile.single('imagen'), validateCreateForm, registerController.postRegister);
 
 router.get("/editar/:id", registerController.editar);
 router.put("/editar/:id", registerController.editar2);
