@@ -48,17 +48,9 @@ const validateCreateForm = [
     check("robot").notEmpty().withMessage("debes aceptar los terminos y condiciones y verificar que no eres un robot")
 ];
 
-/*const validateCreateFormLogin = [
-  check("usuario").notEmpty().withMessage("debes completar el nombre de usuario"),
-    check("contraseña").notEmpty().withMessage("debes completar la contraseña")
-]*/
-
+router.get("/prueba", registerController.prueba);
 
 router.get("/login", guestMiddleware, loginController.login);
-/*router.post("/login",/*[
-  check("usuario").notEmpty().withMessage("debes completar este campo"),
-  check("contraseña").notEmpty().withMessage("debes completar este campo")
-],*//*validateCreateFormLogin, loginController.proccesLogin)*/
 router.post("/login", loginController.proccesLogin);
 
 router.get("/perfil", authMiddleware, loginController.perfil);
@@ -75,4 +67,6 @@ router.put("/editar/:id", registerController.editar2);
 
 router.delete("/delete/:id", registerController.delete);
 
-module.exports = router;
+
+
+module.exports = router; 

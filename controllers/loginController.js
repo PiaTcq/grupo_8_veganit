@@ -12,8 +12,6 @@ const controlador = {
       res.render("users/perfil", {
         user: req.session.userLogged
       });
-     /* console.log("estás en el perfil");
-      console.log(req.session)*/
     },
     proccesLogin: (req,res)=>{
       // res.send(req.body)

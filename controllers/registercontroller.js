@@ -3,10 +3,17 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const cuentasPath = path.join(__dirname, "../data/usuarios.json")
+let db = require("../database/models")
 
 const controlador = {
+    prueba:(req,res)=>{
+    db.usuario.findAll()
+       .then(function(usuario){
+         res.render("users/prueba", {usuario:usuario});
+       })
+       
+    },
     register: (req, res) => {
-     //   const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
 
        // console.log(cuentas[1]);
         res.render("users/register" );//{cuentas}
@@ -20,10 +27,7 @@ const controlador = {
                 newCuenta = {
                 id : Date.now(),
                 nombre: req.body.nombre,
-                /*contraseña: bcrypt.hashSync(req.body.contraseña, 10),*/
-                /*contraseña: req.body.contraseña,*/
                 password: bcrypt.hashSync(req.body.password, 10),
-                /*password: req.body.password,*/
                 email: req.body.email,
                 pais: req.body.pais,
                 localidad: req.body.localidad,
@@ -51,7 +55,7 @@ const controlador = {
             }else{
                 res.send("no se encontró al usuario :(")
             }
-       
+        
             
     },
         editar2:(req,res)=>{
