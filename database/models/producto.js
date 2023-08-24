@@ -43,6 +43,12 @@ module.exports = function(sequelize, dataTypes){
             as: "usuario"
         })
     }*/
+    /* producto.associate = function(models){
+        producto.belongsTo(models.ciudad,{
+            as: "ciudad",
+            foreignKey:"ciudad_id"
+        })
+    }*/  /// UN PRODUCTO PERTENECE A UNA CIUDAD
     
     return producto;
 }
