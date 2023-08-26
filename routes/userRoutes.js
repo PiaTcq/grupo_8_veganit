@@ -3,7 +3,7 @@ const registerController = require('./../controllers/registercontroller');
 
 const multer = require('multer');
 const path = require("path");
-
+ 
 const multerDiskStorage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../public/imagenes'));

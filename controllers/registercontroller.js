@@ -5,6 +5,17 @@ const { validationResult } = require("express-validator");
 const cuentasPath = path.join(__dirname, "../data/usuarios.json")
 let db = require("../database/models")
 
+const { v4: uuidv4 } = require('uuid');
+const uuid = uuidv4();
+const cloudinary = require("cloudinary").v2;
+/*const streamifier = require("streamifier")*/
+ 
+cloudinary.config({
+    cloud_name: "dduyxqrqt",
+    api_key: "867588739315874",
+    api_secret: "meBOrwZzq5JG1CZJmut8pqVFtT0"
+});
+
 const controlador = {
     prueba:(req,res)=>{
     db.usuario.findAll()
@@ -15,35 +26,36 @@ const controlador = {
     },
     register: (req, res) => {
 
-       // console.log(cuentas[1]);
-        res.render("users/register" );//{cuentas}
+        res.render("users/register" );
     },
+    postRegister: (req, res) =>{
+        let errors = validationResult(req);
+        
 
+        if (errors.isEmpty()) {
+            let hashedPassword = bcrypt.hashSync(req.body.password, 10);
+            const customFilename = `${Date.now()}.jpg`;
 
-        postRegister: (req, res) =>{
-            const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-            let errors = validationResult(req);
-                if(errors.isEmpty()){
-                newCuenta = {
-                id : Date.now(),
+            const cloudinaryUpload =  cloudinary.uploader.upload(req.file.path, {
+                public_id: customFilename,
+                overwrite: true
+              });
+
+            db.usuario.create({
+                id: Date.now(),
                 nombre: req.body.nombre,
-                password: bcrypt.hashSync(req.body.password, 10),
+                contraseña: hashedPassword,
                 email: req.body.email,
                 pais: req.body.pais,
                 localidad: req.body.localidad,
                 direccion: req.body.direccion,
                 genero: req.body.genero,
-                imagen: req.file.filename
-            }
-            cuentas.push(newCuenta);
-            const cuentasJson = JSON.stringify(cuentas, null, ' ')
-            fs.writeFileSync(cuentasPath, cuentasJson)
-            res.redirect("/")
-
-            }else{
-                res.render("users/register", { errors: errors.array() }); 
-            }
-            
+                imagen: customFilename /*req.file.filename*/ /*cloudinaryUpload.secure_url*/ /*customFile*/
+            }) 
+            res.redirect("/");
+        } else {
+            res.render("users/register", { errors: errors.array() });
+        }
     },
         editar:(req,res)=>{
             //res.render("users/editar");

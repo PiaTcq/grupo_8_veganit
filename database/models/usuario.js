@@ -1,11 +1,14 @@
+const { v4: uuidv4 } = require('uuid');
+const uuid = uuidv4();
 module.exports = function(sequelize, dataTypes){
     let alias = "usuario";
-
+ 
     let cols = {
         id: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true
+            defaultValue: uuid,
+            allowNull: false
         },
         nombre: {
             type: dataTypes.STRING
@@ -22,12 +25,15 @@ module.exports = function(sequelize, dataTypes){
         localidad: {
             type: dataTypes.STRING
         },
-        dirección: {
+        direccion: {
             type: dataTypes.STRING
-        }/*,
+        },
         genero: {
             type: dataTypes.STRING
-        },*/
+        },
+        imagen: {
+            type: dataTypes.STRING
+        }
     }
     let config = {
         tableName: "usuario",
