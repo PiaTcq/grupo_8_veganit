@@ -8,5 +8,7 @@ CONCLUSIONES GRUPALES del grupo 8(sprint 5)
 
 Luego de unas reuniones, pudimos hacer este sprint de una manera más organizada que los anteriores, habiendo mejor distribución de tareas. Lamentablemente no pudimos entregarlo todo completo a tiempo, haremos lo posible para que eso no vuelva a suceder. También tomaremos el consejo que nos dieron de hacer que la página se vea más profesional y ordenada. Muchas gracias y perdón por la tardanza. 
 
+CONCLUSIONES GRUPALES del grupo 8(sprint 6)
 
+Este si está siendo un sprint mas largo de lo habitual, pero logramos organizar y dividirnos bien las tareas, por lo que, a menos que ocurra un imprevisto, llegaremos bien a la fecha de entrega. Resalto nuevamente como nos pudimos organizar con tiempo, así el trabajo fue más eficiente y disfrutable. 
 

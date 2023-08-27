@@ -2,7 +2,7 @@ const path = require("path");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 //const { validationResult } = require("express-validator");
-
+ 
 const controlador = {
 
     login: (req, res) => {
@@ -13,16 +13,20 @@ const controlador = {
         user: req.session.userLogged
       });
     },
-    proccesLogin: (req,res)=>{
-      // res.send(req.body)
-      let userToLogin = User.findByField("nombre", req.body.nombre)
-     // return res.send(userToLogin)
+    proccesLogin:  async(req,res)=>{
+      try {
+
+      
+      let userToLogin = await User.findByField("nombre", req.body.nombre)
+     
      if(userToLogin){
-    let isOkiDoky = bcrypt.compareSync(req.body.password, userToLogin.password);
+      /*console.log(userToLogin.contraseña)
+      console.log(req.body.password)*/
+    let isOkiDoky = bcrypt.compare/*Sync*/(req.body.password, userToLogin.contraseña);
     if(isOkiDoky){
       delete userToLogin.password;
       req.session.userLogged = userToLogin;
-      //return res.send("Puedes ingresar")
+      
       return res.redirect("/users/perfil")
     }else{
       return res.render("users/login", {
@@ -42,6 +46,9 @@ const controlador = {
         }
       })
      }
+    }catch(error){
+      throw error;
+    }
     },
     logOut: (req,res) => {
      req.session.destroy();
