@@ -57,7 +57,7 @@ router.get("/perfil", authMiddleware, loginController.perfil);
 router.get("/logout", loginController.logOut);
 
 
-router.get("/lista-usuarios",registerController.lista2);
+router.get("/lista-usuarios", authMiddleware, registerController.lista2);
 
 router.get("/register", guestMiddleware,  registerController.register);
 router.post("/register", uploadFile.single('imagen'), validateCreateForm, registerController.postRegister);
@@ -67,6 +67,6 @@ router.put("/editar/:id", registerController.editar2);
 
 router.delete("/delete/:id", registerController.delete);
 
-
+ 
 
 module.exports = router; 

@@ -34,7 +34,7 @@ const controlador = {
 
         if (errors.isEmpty()) {
             let hashedPassword = bcrypt.hashSync(req.body.password, 10);
-            const customFilename = `${Date.now()}.jpg`;
+            const customFilename = `${Date.now()}`;
 
             const cloudinaryUpload =  cloudinary.uploader.upload(req.file.path, {
                 public_id: customFilename,
@@ -57,23 +57,25 @@ const controlador = {
             res.render("users/register", { errors: errors.array() });
         }
     },
-        editar:(req,res)=>{
-            //res.render("users/editar");
-            const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-            //const cuentita = cuentas.find((cuentita) => cuentita.nombre.toLowerCase() === req.params.nombre.toLowerCase());
-            const cuentita = cuentas.find((cuentita) => cuentita.id.toString() === req.params.id.toString());
+        editar: async (req, res) => {
+                try {
+                  const cuentita = await db.usuario.findByPk(req.params.id);
+
           if(cuentita){
                 res.render("users/editar", {cuentita});
             }else{
                 res.send("no se encontró al usuario :(")
-            }
+            } 
+        } catch (error) {
+                console.error("Error:", error);
+                res.status(500).send("Error al obtener los datos de la base de datos");
+              }
         
             
     },
-        editar2:(req,res)=>{
-      const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-     // const cuentita = cuentas.find((cuentita) => cuentita.nombre.toLowerCase() === req.params.nombre.toLowerCase());
-     const cuentita = cuentas.find((cuentita) => cuentita.id.toString() === req.params.id.toString());
+        editar2: async (req, res) => {
+            try {
+              const cuentita = await db.usuario.findByPk(req.params.id);
     if (cuentita){
         cuentita.nombre = req.body.nombre;
         cuentita.contraseña= req.body.contraseña,
@@ -84,25 +86,46 @@ const controlador = {
         cuentita.direccion= req.body.direccion,
         cuentita.genero= req.body.genero
 
-    fs.writeFileSync(cuentasPath, JSON.stringify(cuentas, null, " "))
+        await cuentita.save();
     res.redirect("/")
     }else{
         res.send("fallo al editar :(")
-    }
+    } 
+} catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Error al editar los datos en la base de datos");
+  }
     },
     //lista:(req,res)=>{
    //     const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
     //    res.render("users/lista", {cuentas});
    // },
-    delete:(req,res)=>{
-        const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-        const borrado = cuentas.filter(cuentita => cuentita.id.toString() != req.params.id.toString());
-        fs.writeFileSync(cuentasPath, JSON.stringify(borrado, null, " "));
-        res.redirect("/");
+    delete:async (req, res) => {
+        try {
+          const cuentita = await db.usuario.findByPk(req.params.id); 
+    
+          if (cuentita) {
+            await cuentita.destroy();
+            res.redirect("/");
+          } else {
+            res.send("No se encontró al usuario :(");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al eliminar los datos de la base de datos");
+        }
     },
-    lista2:(req,res)=>{
-        const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-        res.render("users/lista-usuarios", {cuentas});
+    lista2:async(req,res)=>{
+        /*const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
+        res.render("users/lista-usuarios", {cuentas});*/
+    try {
+        const cuentas = await db.usuario.findAll();
+        res.render("users/lista-usuarios", { cuentas });
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).send("Error al obtener los datos de la base de datos");
+    }
+  
 }
 }
 

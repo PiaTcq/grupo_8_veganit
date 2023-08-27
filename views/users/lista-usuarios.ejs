@@ -21,16 +21,20 @@
     <br>
     <div class="container">
       <div class="row">
-          
+           
               <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                   <div class="user-caja">
                       <h4 class="nombre"><%= cuentas.nombre %></h4>
                       <h6 class="numeroId"><%= cuentas.id %></h6>
                       <p class="localidad"><%= cuentas.localidad %></p>
-                      <a href=""></a><button type="button" class="btn btn-outline-danger">Detalle</button></a>
+                     
                       <button class="btn btn-outline-danger"><a href="editar/<%= cuentas.id %>"> editar </a></button>
                       <form action="delete/<%= cuentas.id %>?_method=delete" method="post"> 
                       <button class="btn btn-outline-danger" type="submit"> Borrar </button>
+                      <form action="/delete/<%= cuentas.id %>" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="btn btn-outline-danger" type="submit">Borrar</button>
+                      </form>
                   </div>
               </div>
           </div>
