@@ -13,5 +13,13 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false
     }
     let registro_venta = sequelize.define(alias, cols, config);
+
+    registro_venta.associate = function(models){
+    registro_venta.hasMany(models.venta,{
+        as: "venta",
+        foreignKey: "registro_venta_id"
+    })
+    }
+
     return registro_venta;
 }

@@ -1,8 +1,18 @@
 const fs = require("fs");
 const path = require("path");
+let db = require("../database/models");
 
 const productosFilePath = path.join(__dirname, "../data/datos-productos.json");
-const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"))
+const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"));
+const cloudinary = require("cloudinary").v2;
+const streamifier = require("streamifier");
+
+          
+cloudinary.config({ 
+  cloud_name: 'dn5goxzwt', 
+  api_key: '895718294945439', 
+  api_secret: 'HLfKK0N-CtUjFRJnik_8rl7-dXs' 
+});
 
 const controlador = {
 
@@ -13,7 +23,29 @@ const controlador = {
         res.render("products/crear-producto");
     },
     store: (req,res) => {
-        let datosCreacion = req.body;
+
+        /*const imageBuffer = req.file.buffer;
+        const customFilename = `${Date.now()}`;
+
+        const stream = cloudinary.uploader.upload_stream({resource_type: "image", public_id: customFilename},(error,result)=>{
+            if (error) {
+                console.error("error durante la subida",error);
+            } else {
+               console.log("subida exitosa")
+            }
+        });
+        streamifier.createReadStream(imageBuffer).pipe(stream)*/
+        let nombreImagen = req.file.filename;
+        db.producto.create({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            imagen: nombreImagen,
+            fecha_alta: req.body.fecha,
+            fecha_baja: null,
+        },{include:[{association:"usuario"},{association:"venta"}]})
+
+        /*let datosCreacion = req.body;
         console.log(datosCreacion);
         let idnuevoProducto = (productos[productos.length-1].id)+1;
         let nombreImagen = req.file.filename;
@@ -25,7 +57,8 @@ const controlador = {
             imagen: nombreImagen
         }
         productos.push(objNuevoProducto);
-        fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,""));
+        fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,""));*/
+
         res.redirect("/products/lista-productos");
     },
     editar: (req,res) => {

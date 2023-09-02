@@ -22,9 +22,6 @@ module.exports = function(sequelize, dataTypes){
         fecha_baja: {
             type: dataTypes.DATE
         },
-        direccion: {
-            type: dataTypes.STRING
-        },
         usuario_id: {
             type: dataTypes.STRING
         },
@@ -38,17 +35,20 @@ module.exports = function(sequelize, dataTypes){
     }
     let producto = sequelize.define(alias, cols, config);
 
-   /* producto.associate = function(models){
-        producto.hasMany(models.usuario,{
-            as: "usuario"
+    producto.associate = function(models){
+        producto.belongsTo(models.usuario,{
+            as: "usuario",
+            foreignKey: "usuario_id"
+        });
+        producto.hasMany(models.venta,{
+             as: "venta",
+             foreignKey: "producto_id"
         })
-    }*/
-    /* producto.associate = function(models){
         producto.belongsTo(models.ciudad,{
             as: "ciudad",
             foreignKey:"ciudad_id"
         })
-    }*/  /// UN PRODUCTO PERTENECE A UNA CIUDAD
+    }
     
     return producto;
 }
