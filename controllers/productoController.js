@@ -30,17 +30,17 @@ const controlador = {
         const stream = cloudinary.uploader.upload_stream({resource_type: "image", public_id: customFilename},(error,result)=>{
             if (error) {
                 console.error("error durante la subida",error);
-            } else {
+            } else {                                                    // error cloudinari. CORREGIR
                console.log("subida exitosa")
             }
         });
         streamifier.createReadStream(imageBuffer).pipe(stream)*/
-        let nombreImagen = req.file.filename;
+        //let nombreImagen = req.file.filename;
         db.producto.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
             descripcion: req.body.descripcion,
-            imagen: nombreImagen,
+            imagen: "",//nombreImagen,
             fecha_alta: req.body.fecha,
             fecha_baja: null,
         },{include:[{association:"usuario"},{association:"venta"}]})
@@ -51,7 +51,7 @@ const controlador = {
         let nombreImagen = req.file.filename;
         let objNuevoProducto = {
             id: idnuevoProducto,
-            nombre: datosCreacion.nombre,
+            nombre: datosCreacion.nombre,                  // forma antigua vinculada a json
             precio: parseInt(datosCreacion.precio),
             descripcion: datosCreacion.descripcion,
             imagen: nombreImagen
@@ -61,19 +61,43 @@ const controlador = {
 
         res.redirect("/products/lista-productos");
     },
-    editar: (req,res) => {
+    editar: async(req,res)=>{ 
+        try {
+            const edicion = await db.producto.findByPk(req.params.idProducto);
+            res.render("products/editar-producto", { edicion });
+        } catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    
+    
+    /*(req,res) => {
         let idProducto = req.params.idProducto;
         let productoBuscado;
 
         for(obj of productos){
-            if(obj.id == idProducto){
+            if(obj.id == idProducto){    // forma antigua
                 productoBuscado= obj;
                 break;
             }
         }
-        res.render("products/editar-producto",{productoEnEdicion:productoBuscado});
+        res.render("products/editar-producto",{productoEnEdicion:productoBuscado});*/
     },
-    update: (req,res) =>{
+    update: (req,res) => {
+        db.producto.update({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            imagen: "",//nombreImagen,
+        },
+        {where:{id: req.params.idProducto}},
+        {include:[{association:"usuario"},{association:"venta"}]})
+
+        res.redirect("/products/lista-productos");
+    },
+    
+    
+    /*(req,res) =>{
         let idProducto = req.params.idProducto;
         let nombreImagen = null;
         
@@ -94,24 +118,51 @@ const controlador = {
         }
         fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,""));
         res.redirect("/products/lista-productos");
+    },*/
+    listadoProductos: async(req,res)=>{ 
+        try {
+            const listado = await db.producto.findAll();
+            res.render("products/listado-productos", { listado });
+        } catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    
+    
+    /*(req,res) => {
+        const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8")); // forma antigua vinculada a json
+        res.render("products/listado-productos",{productos:productos});*/
     },
-    listadoProductos: (req,res) => {
-        const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"));
-        res.render("products/listado-productos",{productos:productos});
-    },
-    detalle: (req,res) => {
+    detalle: async(req,res)=>{ 
+        try {
+            const detalle = await db.producto.findByPk(req.params.idProducto);
+            res.render("products/detalle-producto2", { detalle });
+        } catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    
+    /*(req,res) => {
         let idProducto = req.params.idProducto;
         let productoBuscado;
 
         for(obj of productos){
-            if(obj.id == idProducto){
+            if(obj.id == idProducto){      // forma antigua vinculada a json
                 productoBuscado= obj;
                 break;
             }
         }
-        res.render("products/detalle-producto2",{productos:productoBuscado});
+        res.render("products/detalle-producto2",{productos:productoBuscado});*/
     },
-    eliminar: (req,res) => {
+    eliminar: (req, res) => {
+        db.producto.destroy({
+            where:{ id : req.params.idProducto}
+        })
+        res.redirect("/products/lista-productos");
+    }
+}
+    
+    /*(req,res) => {
         let idProducto = req.params.idProducto;
         let nuevoArregloProductos = productos.filter(function(e){
             return e.id != idProducto;
@@ -120,7 +171,7 @@ const controlador = {
         fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,""));
         res.redirect("/products/lista-productos");
     }
-}
+}*/
 
 
 module.exports = controlador;

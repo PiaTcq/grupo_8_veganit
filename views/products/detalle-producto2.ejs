@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalle producto <%= productos.id %> </title>
+        <title>Detalle producto <%= detalle.id %> </title>
         <link href="../css/styles-detalle-producto2.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/418aba2bb0.js" crossorigin="anonymous"></script>
         <!-- Bootstrap CSS -->
@@ -20,16 +20,16 @@
                 <h4 class="titulo-detalle col-sm-3 col-md-3 col-lg-3 col-xl-3"> Detalle del producto:</h4>
                 <div class="producto-box">
                     <div class="imagen-producto">
-                        <img width="250" height="250px" src="/imagenes/<%= productos.imagen %>">
+                        <img width="250" height="250px" src="/imagenes/<%= detalle.imagen %>">
                     </div>
                     <div class="atributos-plato">
-                        <h4 class="nombrePlato"> <%= productos.nombre %></h4>
-                        <h6 class="numeroPlato">Plato N.º: <%= productos.id %></h6>
-                        <p class="precio">$ <%= productos.precio %></p>
-                        <p class="descripcion"> <%= productos.descripcion %></p>
+                        <h4 class="nombrePlato"> <%= detalle.nombre %></h4>
+                        <h6 class="numeroPlato">Plato N.º: <%= detalle.id %></h6>
+                        <p class="precio">$ <%= detalle.precio %></p>
+                        <p class="descripcion"> <%= detalle.descripcion %></p>
                         <div class="d-grid gap-2 d-md-block">
-                            <a href="/products/editar-producto/<%= productos.id %>"><button type="button" class="btn btn-outline-success">Editar</button></a>
-                            <form action="/products/eliminar/<%= productos.id %>?_method=DELETE" method="POST">
+                            <a href="/products/editar-producto/<%= detalle.id %>"><button type="button" class="btn btn-outline-success">Editar</button></a>
+                            <form action="/products/eliminar/<%= detalle.id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>
                         </div>

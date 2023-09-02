@@ -25,9 +25,6 @@ module.exports = function(sequelize, dataTypes){
         usuario_id: {
             type: dataTypes.STRING
         },
-        ciudad_id: {
-            type: dataTypes.STRING
-        }
     }
     let config = {
         tableName: "producto",
@@ -44,10 +41,7 @@ module.exports = function(sequelize, dataTypes){
              as: "venta",
              foreignKey: "producto_id"
         })
-        producto.belongsTo(models.ciudad,{
-            as: "ciudad",
-            foreignKey:"ciudad_id"
-        })
+        
     }
     
     return producto;

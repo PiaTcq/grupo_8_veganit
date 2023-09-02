@@ -12,13 +12,7 @@ module.exports = function(sequelize, dataTypes){
     }
     let ciudad = sequelize.define(alias, cols, config);
 
-    ciudad.associate = function(models){
-        ciudad.hasMany(models.producto,{
-            as: "producto",
-            foreignKey: "ciudad_id"
-        });
-    }
-
+   
 
     return ciudad
 }
