@@ -5,7 +5,7 @@ let db = require("../database/models");
 const productosFilePath = path.join(__dirname, "../data/datos-productos.json");
 const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"));
 const cloudinary = require("cloudinary").v2;
-const streamifier = require("streamifier");
+/*const streamifier = require("streamifier");*/
 
           
 cloudinary.config({ 
@@ -36,11 +36,17 @@ const controlador = {
         });
         streamifier.createReadStream(imageBuffer).pipe(stream)*/
         //let nombreImagen = req.file.filename;
+        const customFilename = `${Date.now()}`;
+
+            const cloudinaryUpload =  cloudinary.uploader.upload(req.file.path, {
+                public_id: customFilename,
+                overwrite: true
+              });
         db.producto.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
             descripcion: req.body.descripcion,
-            imagen: "",//nombreImagen,
+            imagen: customFilename,//nombreImagen,
             fecha_alta: req.body.fecha,
             fecha_baja: null,
         },{include:[{association:"usuario"},{association:"venta"}]})
