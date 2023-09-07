@@ -1,7 +1,7 @@
 
 # VEGANIT
 
-## **Este sitio web te ayudará a encontrar los mejores locales de comida vegana de todo el mercado, al mejor precio y en el menor tiempo posible.**
+## **Este sitio web te ayudará a encontrar la mejor comida vegana de toda la ciudad, al mejor precio y en el menor tiempo posible.**
 
  *Apuntamos a un público vegetariano/vegano, y a todas aquellas personas que quieran animarse a cambiar su forma de alimentación por una más saludable y animal-friendly.*
  
