@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "bdveganit",
-    "host": "127.0.0.1",
+    "username": "326054",
+    "password": "433630Na",
+    "database": "aguirrenico_veganit",
+    "host": "mysql-aguirrenico.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {

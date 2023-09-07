@@ -9,7 +9,7 @@ const controlador = {
         res.render("users/login");
     },
     perfil: (req, res) => {
-      res.render("users/perfil", {
+      res.render("users/detalle-usuario", {
         user: req.session.userLogged
       });
     },
