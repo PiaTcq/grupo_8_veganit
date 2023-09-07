@@ -5,7 +5,7 @@ let db = require("../database/models");
 const productosFilePath = path.join(__dirname, "../data/datos-productos.json");
 const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"));
 const cloudinary = require("cloudinary").v2;
-/*const streamifier = require("streamifier");*/
+const streamifier = require("streamifier");
 
           
 cloudinary.config({ 
@@ -23,47 +23,36 @@ const controlador = {
         res.render("products/crear-producto");
     },
     store: (req,res) => {
+        let img = "https://facultadeducacion.uft.cl/wp-content/uploads/2020/08/arts.jpg";
+        if (req.file) {
+            const imageBuffer = req.file.buffer;
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+            const customFilename = 'product' + uniqueSuffix;
+            
 
-        /*const imageBuffer = req.file.buffer;
-        const customFilename = `${Date.now()}`;
+            const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename }, (error, result) => {
+                if (error) {
+                    console.error('Error during upload: ', error);
+                } else {
+                    console.log('Upload successful: ', result);
+                }
+            });
 
-        const stream = cloudinary.uploader.upload_stream({resource_type: "image", public_id: customFilename},(error,result)=>{
-            if (error) {
-                console.error("error durante la subida",error);
-            } else {                                                    // error cloudinari. CORREGIR
-               console.log("subida exitosa")
-            }
-        });
-        streamifier.createReadStream(imageBuffer).pipe(stream)*/
-        //let nombreImagen = req.file.filename;
-        /*const customFilename = `${Date.now()}`;
-
-            const cloudinaryUpload =  cloudinary.uploader.upload(req.file.path, {
-                public_id: customFilename,
-                overwrite: true
-              });*/
+            streamifier.createReadStream(imageBuffer).pipe(stream);
+            img = `https://res.cloudinary.com/dn5goxzwt/image/upload/${customFilename}`;
+        } 
+        console.log(img)
+        
         db.producto.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
             descripcion: req.body.descripcion,
-            imagen: "",//nombreImagen,
+            imagen: img,//nombreImagen,
             fecha_alta: req.body.fecha,
             fecha_baja: null,
         },{include:[{association:"usuario"},{association:"venta"}]})
 
-        /*let datosCreacion = req.body;
-        console.log(datosCreacion);
-        let idnuevoProducto = (productos[productos.length-1].id)+1;
-        let nombreImagen = req.file.filename;
-        let objNuevoProducto = {
-            id: idnuevoProducto,
-            nombre: datosCreacion.nombre,                  // forma antigua vinculada a json
-            precio: parseInt(datosCreacion.precio),
-            descripcion: datosCreacion.descripcion,
-            imagen: nombreImagen
-        }
-        productos.push(objNuevoProducto);
-        fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,""));*/
+       
 
         res.redirect("/products/lista-productos");
     },
