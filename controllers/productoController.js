@@ -22,7 +22,39 @@ const controlador = {
     crear: (req,res) => {
         res.render("products/crear-producto");
     },
-    store: (req,res) => {
+    store: async function (req, res) {
+  
+        const imageBuffer = req.file.buffer;
+        const customFilename = `${Date.now()}${path.extname(req.file.originalname)}`;
+    
+        const uploadPromise = new Promise((resolve, reject) => {
+          let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
+            if (error) {
+              console.error('Error subindo archivo:', error);
+              reject(error);
+            } else {
+              console.log('Carga exitosa:', result);
+              resolve(result);
+            }
+          });
+          streamifier.createReadStream(imageBuffer).pipe(stream);
+        });
+    
+        const uploadedImage = await uploadPromise;
+      
+        await db.producto.create({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            imagen: customFilename,//nombreImagen,
+            fecha_alta: req.body.fecha,
+            fecha_baja: null,
+        },{include:[{association:"usuario"},{association:"venta"}]})
+        
+        res.redirect("/products/lista-productos");
+      },
+    
+    /*(req,res) => {
         let img = "https://facultadeducacion.uft.cl/wp-content/uploads/2020/08/arts.jpg";
         if (req.file) {
             const imageBuffer = req.file.buffer;
@@ -30,32 +62,22 @@ const controlador = {
             const customFilename = 'product' + uniqueSuffix;
             
 
-            const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename }, (error, result) => {
+            const stream = cloudinary.uploader.upload_stream({ resource_type: 'imagen', public_id: customFilename }, function(error, result) {
+                if (error) {
+                  console.error(error);
+                } else {
+                  console.log(result);
+                }
+              });
+            
+             /*cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename }, (error, result) => {
                 if (error) {
                     console.error('Error during upload: ', error);
                 } else {
                     console.log('Upload successful: ', result);
                 }
-            });
+            });*/
 
-            streamifier.createReadStream(imageBuffer).pipe(stream);
-            img = `https://res.cloudinary.com/dn5goxzwt/image/upload/${customFilename}`;
-        } 
-        console.log(img)
-        
-        db.producto.create({
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            imagen: img,//nombreImagen,
-            fecha_alta: req.body.fecha,
-            fecha_baja: null,
-        },{include:[{association:"usuario"},{association:"venta"}]})
-
-       
-
-        res.redirect("/products/lista-productos");
-    },
     editar: async(req,res)=>{ 
         try {
             const edicion = await db.producto.findByPk(req.params.idProducto);
