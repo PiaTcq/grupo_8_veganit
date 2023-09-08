@@ -10,5 +10,5 @@ Luego de unas reuniones, pudimos hacer este sprint de una manera más organizada
 
 CONCLUSIONES GRUPALES del grupo 8(sprint 6)
 
-Este si está siendo un sprint mas largo de lo habitual, pero logramos organizar y dividirnos bien las tareas, por lo que, a menos que ocurra un imprevisto, llegaremos bien a la fecha de entrega. Resalto nuevamente como nos pudimos organizar con tiempo, así el trabajo fue más eficiente y disfrutable. 
+Este si está siendo un sprint mas largo de lo habitual, pero logramos organizar y dividirnos bien las tareas, por lo que, a menos que ocurra un imprevisto, llegaremos bien a la fecha de entrega. Resalto nuevamente como nos pudimos organizar con tiempo, así el trabajo fue más eficiente y disfrutable. Solamente tuvimos problemas con la ultima parte de cloudinary al subir las imagenes al sitio, pero pronto lo solucionaremos.
 

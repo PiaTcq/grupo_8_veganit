@@ -31,7 +31,7 @@ const controlador = {
           let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
             if (error) {
               console.error('Error subindo archivo:', error);
-              reject(error);
+              reject(error);                                        // cloudinary no funciona correctamente
             } else {
               console.log('Carga exitosa:', result);
               resolve(result);
@@ -54,29 +54,6 @@ const controlador = {
         res.redirect("/products/lista-productos");
       },
     
-    /*(req,res) => {
-        let img = "https://facultadeducacion.uft.cl/wp-content/uploads/2020/08/arts.jpg";
-        if (req.file) {
-            const imageBuffer = req.file.buffer;
-            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-            const customFilename = 'product' + uniqueSuffix;
-            
-
-            const stream = cloudinary.uploader.upload_stream({ resource_type: 'imagen', public_id: customFilename }, function(error, result) {
-                if (error) {
-                  console.error(error);
-                } else {
-                  console.log(result);
-                }
-              });
-            
-             /*cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename }, (error, result) => {
-                if (error) {
-                    console.error('Error during upload: ', error);
-                } else {
-                    console.log('Upload successful: ', result);
-                }
-            });*/
 
     editar: async(req,res)=>{ 
         try {
@@ -93,7 +70,7 @@ const controlador = {
         let productoBuscado;
 
         for(obj of productos){
-            if(obj.id == idProducto){    // forma antigua
+            if(obj.id == idProducto){    // forma antigua de editar
                 productoBuscado= obj;
                 break;
             }
@@ -121,7 +98,7 @@ const controlador = {
         if(req.file){
             nombreImagen = req.file.filename;
         }
-        for(obj of productos){
+        for(obj of productos){                          // forma antigua de subir lo editado
             if(obj.id==idProducto){
                 obj.nombre=req.body.nombre;
                 obj.precio=parseInt(req.body.precio);
@@ -147,7 +124,7 @@ const controlador = {
     
     
     /*(req,res) => {
-        const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8")); // forma antigua vinculada a json
+        const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8")); // forma antigua de mostrar products vinculada a json
         res.render("products/listado-productos",{productos:productos});*/
     },
     detalle: async(req,res)=>{ 
@@ -164,7 +141,7 @@ const controlador = {
         let productoBuscado;
 
         for(obj of productos){
-            if(obj.id == idProducto){      // forma antigua vinculada a json
+            if(obj.id == idProducto){      // forma antigua del detalle vinculada a json
                 productoBuscado= obj;
                 break;
             }
@@ -182,7 +159,7 @@ const controlador = {
     /*(req,res) => {
         let idProducto = req.params.idProducto;
         let nuevoArregloProductos = productos.filter(function(e){
-            return e.id != idProducto;
+            return e.id != idProducto;                              // forma antigua de borrar
         });
         fs.unlinkSync(path.join(__dirname,'../public/imagenes',obj.imagen));
         fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,""));
