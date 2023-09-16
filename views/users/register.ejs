@@ -1,86 +1,101 @@
 <!DOCTYPE html>
-<html>  
-    <head> 
-        <meta charset="utf-8">
-        <link href = "../css/stylemati.css" rel = "stylesheet">
-        <title> Register </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body class="pagina"> 
-    <%- include("../partials/header")%>        
-    <main class="main">
-            <div class="caja" align="center"> 
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="../css/styles-register.css" rel="stylesheet">
+    <title> Register </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="pagina">
+    <%- include("../partials/header")%>
+        <main class="main">
+            <div class="caja" align="center">
                 <h1 class="ejemplo"> CREA TU CUENTA </h1>
-                <% if (locals.errors) {
-                    locals.errors.forEach(error => {  %>
-                      <p> <%= error.msg %> </p>
-                    <% }) 
-                  } %>
-         
-            <form action="/users/register" method="post" enctype="multipart/form-data"> 
-        <div class="seccion"> 
-            <div class="seccionuno"> 
-                <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..." style="width: 230px; height: 35px; font-size:25px;">
-                <br>
-                <br>
-                <input type="password" name="password" id="contraseña" placeholder="contraseña..." style="width: 230px; height: 35px; font-size:25px;">
-                <br>
-                <br> 
-                <input type="password" name="nada" id="confirmar" placeholder="confirme la contraseña..." style="width: 230px; height: 35px; font-size:21px;">
-                <br>
-                <br>
-                <input type="email" name="email" id="email" placeholder="e-mail..." style="width: 230px; height: 35px; font-size:25px;">
-                <br> 
+                <% if (locals.errors) { locals.errors.forEach(error=> { %>
+                    <p>
+                        <%= error.msg %>
+                    </p>
+                    <% }) } %>
+                        <div class=cajaP>
+                            <form action="/users/register" method="post" enctype="multipart/form-data">
+                            <div class="seccion">
+                                <input type="text" name="nombre" id="nombre" placeholder="nombre de usuario..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                <input type="password" name="password" id="contraseña" placeholder="contraseña..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                <input type="email" name="email" id="email" placeholder="e-mail..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                 <input type="password" name="nada" id="confirmar" placeholder="confirme la contraseña..." 
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                            </div>
+
+
+
+                            <div class="secciondos">
+                                <input type="text" name="pais" id="pais" placeholder="país..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                <input type="text" name="localidad" id="localidad" placeholder="localidad..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                <input type="text" name="direccion" id="direccion" placeholder="dirección..."
+                                    style="width: 230px; height: 35px; font-size:150%;">
+                                <br>
+                                <br>
+                                <select name="genero" style="width: 230px; height: 35px; font-size:150%;">
+                                    <option value="" disabled selected hidden>genero...</option>
+                                    <option value="hombre"> hombre </option>
+                                    <option value="mujer"> mujer </option>
+                                    <option value="no"> prefiero no contestar</option>
+                                </select>
+                            </div>
+                            </form>
+                        
+                        <br>
+                        <br>
+                        <br>
             </div>
-          
-            <div class="secciondos"> 
-                <input type="text" name="pais" id="pais" placeholder="país..." style="width: 230px; height: 35px; font-size:25px;">
+            <div class="seccioncita">
+                <div>
+                    <p> agrega una imagen de perfil: </p>
+                    <input type="file" name="imagen">
+                </div>
                 <br>
                 <br>
-                <input type="text" name="localidad" id="localidad" placeholder="localidad..." style="width: 230px; height: 35px; font-size:25px;">
+                <div class="secciontres">
+                    <input type="checkbox" name="robot" value="no soy un robot">
+                    <label> No soy un robot</label>
+                </div>
                 <br>
-                <br>
-                <input type="text" name="direccion" id="direccion" placeholder="dirección..." style="width: 230px; height: 35px; font-size:25px;">
-                <br>
-                <br>
-                <select name="genero" style="width: 230px; height: 35px; font-size:20px;">
-                    <option value="" disabled selected hidden>genero...</option>
-                    <option  value="hombre"> hombre </option>
-                    <option value="mujer"> mujer </option>
-                    <option value="no"> prefiero no contestar</option>
-                </select>  
-            </div> 
-            <br> 
+                <div class="seccioncuatro">
+                    <input type="checkbox" name="robot" value="acepto">
+                    <label> Aceptar terminos y condiciones de uso y el reglamento de convivencia </label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="boton"> registrarse </button>
             <br>
             <br>
-            </div> 
-        <div class="seccioncita"> 
-            <div class="avr"> 
-                <p> agrega una imagen de perfil: </p>
-                    <input type="file" name="imagen"> </div>
-                <br> 
-                <br>
-            <div class="secciontres"> 
-                <input type="checkbox" name="robot" value="no soy un robot">
-                <label> No soy un robot</label>
-            </div>
-                <br>
-            <div class="seccioncuatro"> 
-                <input type="checkbox" name="robot" value="acepto">
-                <label> Aceptar terminos y condiciones de uso y el reglamento de convivencia </label>
-            </div>
-        </div>
-                <br>
-                <button type="submit" class="boton">   registrarse  </button> 
-                <br>
-                <br>
             </form>
-             </div>
-    </main>
-    <br>
-    <br>
+            </div>
+            
+        </main>
+        <br>
+        <br>
 
-    <%- include("../partials/footer") %>
+        <%- include("../partials/footer") %>
 
-    </body>
+</body>
+
 </html>

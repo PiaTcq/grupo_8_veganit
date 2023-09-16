@@ -1,0 +1,169 @@
+.pagina{
+    background-color: pink;
+}
+
+.header{
+    background-color: black;
+    color:white;
+}
+
+.main{
+    font-size: 70%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    display: flex;
+} 
+
+
+.cabeza{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.caja{
+    margin-top: 15px;
+    background-color: #E3DBDF;
+    opacity: 0.9;
+    width: 30%;
+    border: solid 5px black;
+   box-sizing: content-box;
+   display: flex;
+   flex-direction: column; 
+   margin-left: auto;
+   margin-right: auto;
+    
+}
+
+.boton{
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+}
+.boton:hover{
+    background-color: red;
+}
+
+.boton2{
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+}
+.boton2:hover{
+    background-color: red;
+}
+
+.chikito{
+    font-size: 17px;
+}
+
+.seccion{
+   /* width: 150px;
+    height: 50px;*/
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2%;
+    margin-right: auto;
+}
+
+.secciondos{
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-left: 11%;
+    margin-right: 10%;
+}
+
+.seccioncita{
+    flex-direction: column;
+}
+/*.seccioncita{
+    display:flex;*/
+    /*flex-direction: column;*/
+   /* justify-content: flex-end;
+    width: 60%;
+}*/
+
+/*.seccionuno{
+    display: flex;
+}
+.secciondos{
+    display: flex;
+}*/
+.secciontres{
+    display:flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+.seccioncuatro{
+    display:flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+/*.seccioncita{
+    width: 60%;
+    margin-top: 60%;
+    margin-right: 60%;
+}*/
+
+
+.imagenPerfil {
+    margin-right: 20%;
+}
+
+.lista{
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    background-color: pink;
+}
+
+.deleteyedit{
+    width: 200px; 
+    height: 50px;
+    background-color: orangered;
+}
+
+/*.ejemplo{
+    border: solid 5px black;
+    margin-left: 120px;
+    margin-right: 120px;
+}*/
+
+
+
+@media (max-width:360px )/*celulares chiquitos*/{
+    body{
+          .caja{
+            flex-wrap: wrap;
+            width: 100% !important;
+            align-items: center;
+          .seccion{
+            flex-wrap: wrap;
+            width: 100% !important;
+            align-items: center;
+          }
+    }
+    }
+}
+
+@media (max-width:880px )/*tablets*/{
+    body{
+          .caja{
+            flex-wrap: wrap;
+            width: 75%;
+            align-items: center;
+          .seccion{
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+          }
+          .footer{
+            height: 25px;
+          }
+    }
+    }
+}
