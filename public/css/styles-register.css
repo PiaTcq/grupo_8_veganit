@@ -167,3 +167,30 @@
     }
     }
 }
+
+@media (min-width: 880px)/*computadora*/{
+       
+    .main{
+        font-size: 70%;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+    }
+        
+    .caja{
+        width: 40vw;
+        align-items: center;
+    }
+
+    .secciondos{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .seccion{
+        flex-direction: column;
+        margin-left: auto;
+    }
+
+    
+}
