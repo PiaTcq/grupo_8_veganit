@@ -19,8 +19,12 @@
                         <%= error.msg %>
                     </p>
                     <% }) } %>
+                    <div class="errores"> <ul> </ul> </div>
+                    
+                    <div class="errorez"> <ul> </ul> </div>
+
                         <div class=cajaP>
-                            <form action="/users/register" method="post" enctype="multipart/form-data" id="miFormulario">
+                            <form action="/users/register" method="post" enctype="multipart/form-data" id="formulario-register">
                             <div class="seccion">
                                 <input type="text" class="nombre" name="nombre" id="nombre" placeholder="nombre de usuario..."
                                     style="width: 230px; height: 35px; font-size:150%;">
@@ -33,10 +37,7 @@
                                 <input type="email" name="email" id="email" placeholder="e-mail..."
                                     style="width: 230px; height: 35px; font-size:150%;">
                                 <br>
-                                <br>
-                                 <input type="password" name="nada" id="confirmar" placeholder="confirme la contraseña..." 
-                                    style="width: 230px; height: 35px; font-size:150%;">
-                                <br>
+                                
                             </div>
 
 
@@ -54,7 +55,7 @@
                                     style="width: 230px; height: 35px; font-size:150%;">
                                 <br>
                                 <br>
-                                <select name="genero" style="width: 230px; height: 35px; font-size:150%;">
+                                <select name="genero" id="genero" style="width: 230px; height: 35px; font-size:150%;">
                                     <option value="" disabled selected hidden>genero...</option>
                                     <option value="hombre"> hombre </option>
                                     <option value="mujer"> mujer </option>
@@ -75,12 +76,12 @@
                 <br>
                 <br>
                 <div class="secciontres">
-                    <input type="checkbox" name="robot" value="no soy un robot">
-                    <label> No soy un robot</label>
+                    <input type="checkbox" name="robot" id="robot" value="no soy un robot">
+                    <label > No soy un robot</label>
                 </div>
                 <br>
                 <div class="seccioncuatro">
-                    <input type="checkbox" name="robot" value="acepto">
+                    <input type="checkbox" name="robot" id="terminos" value="acepto">
                     <label> Aceptar terminos y condiciones de uso y el reglamento de convivencia </label>
                 </div>
             </div>
@@ -96,7 +97,7 @@
         <br>
 
         <%- include("../partials/footer") %>
-
+        <script src="/js/scriptreg.js"> </script>
 </body>
 
 </html> 
