@@ -116,8 +116,6 @@ const controlador = {
         }
     },
     lista2:async(req,res)=>{
-        /*const cuentas = JSON.parse(fs.readFileSync(cuentasPath, "utf-8"));
-        res.render("users/lista-usuarios", {cuentas});*/
     try {
         const cuentas = await db.usuario.findAll();
         res.render("users/lista-usuarios", { cuentas });
