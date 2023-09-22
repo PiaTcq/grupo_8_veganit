@@ -38,4 +38,13 @@ p{
     width:40%;
     
 }
+.errorMsj{
+    color : red;
+    font-size: 13px;
+}
+.errores{
+    color : red;
+    font-size: 13px;
+}
+
 

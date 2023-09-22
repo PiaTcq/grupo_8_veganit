@@ -19,23 +19,35 @@
     <main>
     <div>
         <h4 class="titulo-crear">Crear producto:</h4>
-        <form action="/products/crear-producto" method="POST" enctype="multipart/form-data" class="formulario-crear">
+        <form action="/products/crear-producto" method="POST" enctype="multipart/form-data" class="formulario-crear" id="formulario">
             <div class="Crear-producto">
+                <% if (locals.errors) { locals.errors.forEach(error=> { %>
+                    <p>
+                        <%= error.msg %>
+                    </p>
+                    <% }) } %>
+                   
                 <p>Ingresar nombre del producto:</p>
-                <input type="text" placeholder="" name="nombre" class="barraProduc">
+                <input type="text" placeholder="" name="nombre" class="barraProduc" id="nombre">
+                <p class="errores" id="p1"></p>
             </div>
             <div class="login">
                 <p>Ingresar precio del producto:</p>
-                <input type="text" placeholder="" name="precio" class="barraProduc">
+                <input type="text" placeholder="" name="precio" class="barraProduc" id="precio">
             </div>
+            <p class="errores" id="p2"></p>
             <div class="form-floating">
                 <p>Agregar descripción del producto:</p>
-                <textarea type="text" name="descripcion" class="descripcion"></textarea>
+                <textarea type="text" name="descripcion" class="descripcion" id="descripcion"></textarea>
+                <small></small>
             </div>
+            <p class="errores" id="p3"></p>
             <div class="login">
                 <p>Ingresar fecha de creacion del producto:</p>
-                <input type="date" placeholder="" name="fecha" class="barraProduc">
+                <input type="date" placeholder="" name="fecha" class="barraProduc" id="fecha">
+                <small></small>
             </div>
+            <p id="p4" class="errores"></p>
             <div>
                 <p class="txt-agregar-img">Agregar imagen del producto:</p>
                 <div class="agregar-imagen">
@@ -53,6 +65,6 @@
     <br>
     <br>
     <%- include("../partials/footer") %>
-
+    <script src="/js/validacionCrearProduct2.js"></script>
 </body>
 </html>

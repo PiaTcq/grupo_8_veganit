@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const express = require("express");
 const router = express.Router();
+const { check } = require("express-validator");
 
 /*const multerDiskStorage = multer.diskStorage({
     destination: function(req, file, cb) {       
@@ -18,13 +19,20 @@ const router = express.Router();
 
 const uploadFile = multer();
 
+const ValidacionCrearProducto = [
+    check("nombre").notEmpty().withMessage("El campo nombre no debe estar vacio"),
+    check("precio").notEmpty().withMessage("El campo precio no debe estar vacio"),
+    check("descripcion").notEmpty().withMessage("El campo descripcion no debe estar vacio"),
+    check("fecha").notEmpty().withMessage("El campo fecha no debe estar vacio")
+]
+
 
 router.get("/producto", productoController.producto);
 
 router.get("/carrito", carritoController.carrito);
 
 router.get("/crear-producto", productoController.crear);
-router.post("/crear-producto",uploadFile.single('imagen'), productoController.store);
+router.post("/crear-producto",uploadFile.single('imagen'),ValidacionCrearProducto, productoController.store);
 
 router.get("/editar-producto/:idProducto", productoController.editar);
 router.put("/editar-producto/:idProducto",uploadFile.single('imagen'), productoController.update);

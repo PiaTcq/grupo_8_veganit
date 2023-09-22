@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const {validationResult} = require("express-validator");
 let db = require("../database/models");
+
 
 const productosFilePath = path.join(__dirname, "../data/datos-productos.json");
 const productos = JSON.parse(fs.readFileSync(productosFilePath,"utf-8"));
@@ -23,6 +25,9 @@ const controlador = {
         res.render("products/crear-producto");
     },
     store: async function (req, res) {
+
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
   
         const imageBuffer = req.file.buffer;
         const customFilename = `${Date.now()}${path.extname(req.file.originalname)}`;
@@ -30,7 +35,7 @@ const controlador = {
         const uploadPromise = new Promise((resolve, reject) => {
           let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
             if (error) {
-              console.error('Error subindo archivo:', error);
+              console.error('Error subiendo archivo:', error);
               reject(error);                                        // cloudinary no funciona correctamente
             } else {
               console.log('Carga exitosa:', result);
@@ -39,8 +44,10 @@ const controlador = {
           });
           streamifier.createReadStream(imageBuffer).pipe(stream);
         });
+
     
         const uploadedImage = await uploadPromise;
+
       
         await db.producto.create({
             nombre: req.body.nombre,
@@ -52,7 +59,11 @@ const controlador = {
         },{include:[{association:"usuario"},{association:"venta"}]})
         
         res.redirect("/products/lista-productos");
-      },
+      }
+      else{
+        res.render("products/crear-producto",{errors: errors.array()});
+      }
+    },
     
 
     editar: async(req,res)=>{ 
