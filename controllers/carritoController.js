@@ -4,6 +4,9 @@ const controlador = {
 
     carrito: (req, res) => {
         res.render("products/carrito");
+    },
+    carrito2: (req, res) => {
+        res.render("products/carrito2");
     }
 }
 

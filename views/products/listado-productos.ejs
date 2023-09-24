@@ -25,9 +25,10 @@
                             <h4 class="nombrePlato"><%= listado[i].nombre %></h4>
                             <h6 class="numeroPlato">Plato N.º:<%= listado[i].id %></h6>
                             <a class="imagenPlato" href="/products/detalle-producto/<%= listado[i].id %>"><img width="150" height="150px" src="/imagenes/<%= listado[i].imagen %>"></a>
-                            <p class="precio">$<%= listado[i].precio %></p>
+                            <h5 class="precio">$<%= listado[i].precio %></h5>
                             <p class="descripcion"><%= listado[i].descripcion %></p>
                             <a class="ancor" href="/products/detalle-producto/<%= listado[i].id %>"><p class="detalle">Ver detalle</p></a>
+                            <a class="ancor"><p class="añadir">Añadir al carrito</p></a>
                         </div>
                     </div>
                     <% } %>
@@ -40,5 +41,6 @@
     <br>
     <%- include("../partials/footer") %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="/js/scriptcarrito.js"> </script>
 </body>
 </html>

@@ -30,6 +30,7 @@ const ValidacionCrearProducto = [
 router.get("/producto", productoController.producto);
 
 router.get("/carrito", carritoController.carrito);
+router.get("/carrito2", carritoController.carrito2);
 
 router.get("/crear-producto", productoController.crear);
 router.post("/crear-producto",uploadFile.single('imagen'),ValidacionCrearProducto, productoController.store);
