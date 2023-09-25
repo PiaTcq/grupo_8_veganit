@@ -35,7 +35,23 @@ productsListContainer.addEventListener("click", e => {
       price: product.querySelector(".precio").textContent
     };
 
-    allProducts = [...allProducts, infoProduct];
+    let exists = allProducts.some(product => product.title === infoProduct.title)
+    
+    if(exists){
+      let products = allProducts.map(product => {
+        if(product.title === infoProduct.title){
+         product.quantity++;
+         return product
+        }else{
+          return product
+        }
+      })
+      allProducts = [...allProducts]
+    }else{
+      allProducts = [...allProducts, infoProduct];
+    }
+
+    
     showHTML();
   }
 });
