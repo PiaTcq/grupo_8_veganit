@@ -66,5 +66,19 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-
+.borrar{
+    color: red;
+}
+.comprar{
+    margin-top: 15px;
+    background-color: #E3DBDF;
+    opacity: 0.9;
+    width: 30%;
+    border: solid 5px black;
+   box-sizing: content-box;
+   display: flex;
+   flex-direction: column; 
+   margin-left: auto;
+   margin-right: auto;
+}
   
