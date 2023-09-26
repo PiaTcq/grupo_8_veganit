@@ -96,8 +96,12 @@ rowProduct.addEventListener("click", (e) => {
   }
 });
 
+let productRow = document.querySelector(".product-row");
+productRow.addEventListener("click", (e) => {
+  let comprar = document.getElementById("comprar")
+  if (comprar) {
+    
+    alert("gracias por su compra :)");
+  }
+});
 
-/*rowProduct.addEventListener("press", (e) => {
-  if (e.target.classList.contains("comprar")){
-    console.log("gracias por su compa :)")
-  }})*/
