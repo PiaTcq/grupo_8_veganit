@@ -12,3 +12,6 @@ CONCLUSIONES GRUPALES del grupo 8(sprint 6)
 
 Este si está siendo un sprint mas largo de lo habitual, pero logramos organizar y dividirnos bien las tareas, por lo que, a menos que ocurra un imprevisto, llegaremos bien a la fecha de entrega. Resalto nuevamente como nos pudimos organizar con tiempo, así el trabajo fue más eficiente y disfrutable. Solamente tuvimos problemas con la ultima parte de cloudinary al subir las imagenes al sitio, pero pronto lo solucionaremos.
 
+CONCLUSIONES GRUPALES del grupo 8(sprint 7)
+
+Este Sprint no se nos hizo tan complicado con el anterior, pero lamentablemente no parece que nos esté por dar los tiempos para solucionar el error de validación de productos en frontend, y aún nos queda por solucionar el tema de las imagenes de Cloudinary. Haremos lo posible para solucionar esto antes del sprint 8, así no se nos amontona mucho trabajo. Gracias por su atención y ayuda. 
