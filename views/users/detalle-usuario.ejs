@@ -35,7 +35,7 @@
                         <p class="pais">País: <%= user.pais %></p>
                         <p class="localidad">Localidad:<%= user.localidad %></p>
                         <p class="direccion"><%= user.direccion %></p>
-                        <img width="500px" src=" https://res.cloudinary.com/dduyxqrqt/image/upload/v1632059281/<%= user.imagen %>.jpg">
+                        <img width="500px" src= "<%= user.imagen %>">
                       </div>
                     </div>
                     <button type="submit"> <a href="../users/logout">Cerrar sesión</a></button>
@@ -49,6 +49,9 @@
       </div>
   </div>
   <br>
+  <script>
+    console.log("Contenido de user.imagen:", "<%= user.imagen %>");
+  </script>
   <br>
   <br>
   </main>
