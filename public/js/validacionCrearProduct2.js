@@ -10,7 +10,7 @@ window.addEventListener("load",function(){
         let nombre = document.getElementById("nombre");
         let precio = document.getElementById("precio");
         let descripcion = document.getElementById("descripcion");
-        let fecha = document.querySelector("fecha");
+        let fecha = document.getElementById("fecha");
         let p1 = document.getElementById("p1");
         let p2 = document.getElementById("p2");
         let p3 = document.getElementById("p3");

@@ -58,6 +58,7 @@ const controlador = {
             imagen: cloudinaryUpload.secure_url
           });
           /*streamifier.createReadStream(imageBuffer).pipe(newUser)*/
+          console.log(cloudinaryUpload.secure_url)
           res.redirect("/");
         } catch (error) {
           console.error("Error:", error);
