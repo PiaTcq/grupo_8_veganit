@@ -168,7 +168,29 @@ const controlador = {
       res.status(500).send("Error al obtener los datos de la base de datos");
     }
   
-}
+},
+    api:(req, res) => {
+      /*res.render("users/register");*/
+      db.usuario
+      .findAll()
+      .then(usuario => {
+        return res.status(300).json({
+          total: usuario.length,
+          data: usuario,
+          status: 300
+        })
+      })
+  },
+  show:(req,res) => {
+    db.usuario
+      .findByPk(req.params.id)
+      .then(usuario => {
+        return res.status(300).json({
+          data: usuario,
+          status: 300
+        })
+      })
+  }
 }
 
 

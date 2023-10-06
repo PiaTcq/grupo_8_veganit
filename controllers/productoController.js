@@ -164,7 +164,28 @@ const controlador = {
             where:{ id : req.params.idProducto}
         })
         res.redirect("/products/lista-productos");
-    }
+    },
+    api:(req, res) => {
+        db.producto
+        .findAll()
+        .then(producto => {
+          return res.status(300).json({
+            total: producto.length,
+            data: producto,
+            status: 300
+          })
+        })
+    },
+    show:(req,res) => {
+        db.producto
+          .findByPk(req.params.id)
+          .then(producto => {
+            return res.status(300).json({
+              data: producto,
+              status: 300
+            })
+          })
+      }
 }
     
     /*(req,res) => {

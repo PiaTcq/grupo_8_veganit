@@ -29,11 +29,11 @@
                       <p class="localidad"><%= cuentas.localidad %></p>
                      
                       <button class="btn btn-outline-danger"><a href="editar/<%= cuentas.id %>"> editar </a></button>
-                      <form action="delete/<%= cuentas.id %>?_method=delete" method="post"> 
+                      <form action="delete/<%= cuentas.id %>?_method=delete" method="post">
                       <button class="btn btn-outline-danger" type="submit"> Borrar </button>
                       <form action="/delete/<%= cuentas.id %>" method="post">
                         <input type="hidden" name="_method" value="delete">
-                        <button class="btn btn-outline-danger" type="submit">Borrar</button>
+                        
                       </form>
                   </div>
               </div>

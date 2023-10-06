@@ -35,9 +35,10 @@
                         <p class="pais">País: <%= user.pais %></p>
                         <p class="localidad">Localidad:<%= user.localidad %></p>
                         <p class="direccion"><%= user.direccion %></p>
-                        <img width="500px" src= "<%= user.imagen %>">
+                        <img width="250px" src= "<%= user.imagen %>">
                       </div>
                     </div>
+                    <br>
                     <button type="submit"> <a href="../users/logout">Cerrar sesión</a></button>
                     <div class="editar">
                         <button type="submit" class="btn btn-outline-primary"><a href="editar/<%= user.id %>">Editar</a></button>   

@@ -44,4 +44,7 @@ router.get("/detalle-producto/:idProducto", productoController.detalle);
 
 router.delete("/eliminar/:idProducto", productoController.eliminar);
 
+router.get("/api", productoController.api);
+router.get("/api/:id", productoController.show);
+
 module.exports = router;

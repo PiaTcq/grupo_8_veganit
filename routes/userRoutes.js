@@ -67,6 +67,7 @@ router.put("/editar/:id", registerController.editar2);
 
 router.delete("/delete/:id", registerController.delete);
 
- 
+router.get("/api", registerController.api);
+router.get("/api/:id", registerController.show);
 
 module.exports = router; 
