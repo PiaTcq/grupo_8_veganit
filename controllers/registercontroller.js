@@ -172,7 +172,9 @@ const controlador = {
     api:(req, res) => {
       /*res.render("users/register");*/
       db.usuario
-      .findAll()
+      .findAll({
+        attributes: { exclude: ['contraseña','direccion'] } 
+      })
       .then(usuario => {
         return res.status(300).json({
           total: usuario.length,
@@ -183,7 +185,9 @@ const controlador = {
   },
   show:(req,res) => {
     db.usuario
-      .findByPk(req.params.id)
+      .findByPk(req.params.id,{
+        attributes: { exclude: ['contraseña','direccion'] }
+      })
       .then(usuario => {
         return res.status(300).json({
           data: usuario,
