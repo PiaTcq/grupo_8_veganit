@@ -9,6 +9,9 @@ const path = require('path');
 const app = express();
 const session = require("express-session")
 
+const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:3000' }));
+
 app.use(session({
     secret: "buizel",
     resave: false,
