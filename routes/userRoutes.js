@@ -69,5 +69,7 @@ router.delete("/delete/:id", registerController.delete);
 
 router.get("/api", registerController.api);
 router.get("/api/:id", registerController.show);
+router.get("/lastcreated", registerController.lastcreated);
+
 
 module.exports = router; 

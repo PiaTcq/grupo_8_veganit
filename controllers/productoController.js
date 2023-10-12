@@ -185,7 +185,18 @@ const controlador = {
               status: 300
             })
           })
-      }
+      },
+      lastcreated:(req, res) => {
+        db.producto
+        .findOne({
+          order: [['id', 'DESC']]
+        })
+        .then(producto => {
+          return res.status(300).json({
+            data: producto
+          });
+        });
+    }
 }
     
     /*(req,res) => {

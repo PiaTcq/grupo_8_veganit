@@ -170,7 +170,6 @@ const controlador = {
   
 },
     api:(req, res) => {
-      /*res.render("users/register");*/
       db.usuario
       .findAll({
         attributes: { exclude: ['contraseña','direccion'] } 
@@ -194,7 +193,19 @@ const controlador = {
           status: 300
         })
       })
-  }
+  },
+  lastcreated:(req, res) => {
+    db.usuario
+    .findOne({
+      attributes: { exclude: ['contraseña', 'direccion'] },
+      order: [['id', 'DESC']]
+    })
+    .then(usuario => {
+      return res.status(300).json({
+        data: usuario
+      });
+    });
+}
 }
 
 
