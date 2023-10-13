@@ -196,6 +196,18 @@ const controlador = {
             data: producto
           });
         });
+    },
+    cheaper:(req, res) => {
+      db.producto
+      .findOne({
+        order:[['precio', 'ASC']],
+        limit:1
+      })
+      .then(producto => {
+        return res.status(200).json({
+          data: producto
+        })
+      })
     }
 }
     

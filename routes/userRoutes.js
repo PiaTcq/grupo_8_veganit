@@ -48,7 +48,7 @@ const validateCreateForm = [
     check("robot").notEmpty().withMessage("debes aceptar los terminos y condiciones y verificar que no eres un robot")
 ];
 
-router.get("/prueba", registerController.prueba);
+/*router.get("/prueba", registerController.prueba);*/
 
 router.get("/login", guestMiddleware, loginController.login);
 router.post("/login", loginController.proccesLogin);

@@ -47,5 +47,6 @@ router.delete("/eliminar/:idProducto", productoController.eliminar);
 router.get("/api", productoController.api);
 router.get("/api/:id", productoController.show);
 router.get("/lastcreated", productoController.lastcreated);
+router.get("/cheaper", productoController.cheaper);
 
 module.exports = router;
