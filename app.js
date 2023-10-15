@@ -10,7 +10,8 @@ const app = express();
 const session = require("express-session")
 
 const cors = require('cors');
-app.use(cors({ origin: 'http://localhost:3000' }));
+const allowedOrigins = ['http://localhost:3000', 'https://master--tiny-bavarois-a20802.netlify.app/'];
+app.use(cors({origin: allowedOrigins/*origin:'https://master--tiny-bavarois-a20802.netlify.app/'*/}));
 
 app.use(session({
     secret: "buizel",
