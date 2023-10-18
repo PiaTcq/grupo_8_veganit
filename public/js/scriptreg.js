@@ -40,6 +40,10 @@ window.addEventListener("load", function(){
         if(terminos.value == ""){
             errores.push("porfavor acepte los terminos")
         }*/
+        let imagen = document.querySelector("input[type='file']");
+        if (!imagen.value) {
+          errores.push("Debes subir una imagen de perfil");
+        }
         
 
         if(errores.length > 0){
