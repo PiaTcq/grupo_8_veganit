@@ -24,7 +24,10 @@
                             <a class="ancor" href="/products/detalle-producto/<%= listado[i].id %>">
                             <h4 class="nombrePlato"><%= listado[i].nombre %></h4>
                             <h6 class="numeroPlato">Plato N.º:<%= listado[i].id %></h6>
-                            <a class="imagenPlato" href="/products/detalle-producto/<%= listado[i].id %>"><img width="150" height="150px" src="/imagenes/<%= listado[i].imagen %>"></a>
+                            <a class="imagenPlato" href="/products/detalle-producto/<%= listado[i].id %>">
+                                <img width="150" height="150" src="<%= listado[i].imagen %>" alt="<%= listado[i].nombre %>">
+                            </a>
+                            
                             <h5 class="precio">$<%= listado[i].precio %></h5>
                             <p class="descripcion"><%= listado[i].descripcion %></p>
                             <a class="ancor" href="/products/detalle-producto/<%= listado[i].id %>"><p class="detalle">Ver detalle</p></a>

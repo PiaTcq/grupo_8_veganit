@@ -22,6 +22,9 @@ module.exports = function(sequelize, dataTypes){
         fecha_baja: {
             type: dataTypes.DATE
         },
+        imagen: {
+            type: dataTypes.STRING 
+        },
         usuario_id: {
             type: dataTypes.STRING
         },

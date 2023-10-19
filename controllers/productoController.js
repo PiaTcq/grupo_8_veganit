@@ -10,10 +10,11 @@ const cloudinary = require("cloudinary").v2;
 const streamifier = require("streamifier");
 
           
-cloudinary.config({ 
-  cloud_name: 'dn5goxzwt', 
-  api_key: '895718294945439', 
-  api_secret: 'HLfKK0N-CtUjFRJnik_8rl7-dXs' 
+cloudinary.config({
+  cloud_name: "dduyxqrqt",
+  api_key: "867588739315874",
+  api_secret: "meBOrwZzq5JG1CZJmut8pqVFtT0",
+  debug: true
 });
 
 const controlador = {
@@ -24,7 +25,7 @@ const controlador = {
     crear: (req,res) => {
         res.render("products/crear-producto");
     },
-    store: async function (req, res) {
+    /*store: async function (req, res) {
 
         let errors = validationResult(req);
         if(errors.isEmpty()){
@@ -36,7 +37,7 @@ const controlador = {
           let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename}, (error, result) => {
             if (error) {
               console.error('Error subiendo archivo:', error);
-              reject(error);                                        // cloudinary no funciona correctamente
+              reject(error);                                        
             } else {
               console.log('Carga exitosa:', result);
               resolve(result);
@@ -63,7 +64,49 @@ const controlador = {
       else{
         res.render("products/crear-producto",{errors: errors.array()});
       }
-    },
+    },*/
+    
+    store: async function (req, res) {
+      let errors = validationResult(req);
+      if (errors.isEmpty()) {
+          try {
+              const imageBuffer = req.file.buffer;
+              const customFilename = `${Date.now()}${path.extname(req.file.originalname)}`;
+  
+              const uploadPromise = new Promise((resolve, reject) => {
+                  let stream = cloudinary.uploader.upload_stream({ resource_type: 'image', public_id: customFilename }, (error, result) => {
+                      if (error) {
+                          console.error('Error subiendo archivo:', error);
+                          reject(error);
+                      } else {
+                          console.log('Carga exitosa:', result);
+                          resolve(result.secure_url); // Usar result.secure_url para obtener la URL de la imagen
+                      }
+                  });
+                  streamifier.createReadStream(imageBuffer).pipe(stream);
+              });
+  
+              const imageUrl = await uploadPromise;
+  
+              await db.producto.create({
+                  nombre: req.body.nombre,
+                  precio: req.body.precio,
+                  descripcion: req.body.descripcion,
+                  imagen: imageUrl, // Usar la URL de la imagen
+                  fecha_alta: req.body.fecha,
+                  fecha_baja: null,
+              }, { include: [{ association: "usuario" }, { association: "venta" }] });
+  
+              res.redirect("/products/lista-productos");
+          } catch (error) {
+              console.error("Error:", error);
+              res.status(500).send("Error al cargar la imagen o crear el usuario en la base de datos");
+          }
+      } else {
+          res.render("products/crear-producto", { errors: errors.array() });
+      }
+  },
+  
     
 
     editar: async(req,res)=>{ 
