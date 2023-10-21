@@ -135,8 +135,7 @@ const controlador = {
         db.producto.update({
             nombre: req.body.nombre,
             precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            imagen: "",//nombreImagen,
+            descripcion: req.body.descripcion
         },
         {where:{id: req.params.idProducto}},
         {include:[{association:"usuario"},{association:"venta"}]})

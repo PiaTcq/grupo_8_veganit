@@ -15,3 +15,7 @@ Este si está siendo un sprint mas largo de lo habitual, pero logramos organizar
 CONCLUSIONES GRUPALES del grupo 8(sprint 7)
 
 Este Sprint no se nos hizo tan complicado con el anterior, pero lamentablemente no parece que nos esté por dar los tiempos para solucionar el error de validación de productos en frontend, y aún nos queda por solucionar el tema de las imagenes de Cloudinary. Haremos lo posible para solucionar esto antes del sprint 8, así no se nos amontona mucho trabajo. Gracias por su atención y ayuda. 
+
+CONCLUSIONES GRUPALES del grupo 8(sprint 8)
+
+Bueno, este fue el último sprint y creo que este es en el que más nos esforzamos, nos pusimos al dia con unas cosas que teniamos pendientes y terminamos lo del sprint 8. Esperamos que les haya gustado el resultado final, nos sirvió y nos entretuvo mucho este proyecto, aprendimos muchas cosas de programación y de trabajo en equipo. Capaz solo nos hubiera gustado que ciertas vistas se vieran un poco más presentables/profesionales, pero creemos que la mayoria se ve bien y todo funciona correctamente. Gracias por enseñarnos tantas cosas y esperamos que nos vaya bien en la exposición grupal y en la parte evaluativa individual. Muchas gracias. 
